@@ -19,14 +19,6 @@ function getCircularReplacer() {
   };
 }
 
-JSON.stringify(circularReference, getCircularReplacer());
-// {"otherData":123,"myself":"[Circular]"}
-
-const o = {};
-const notCircularReference = [o, o];
-JSON.stringify(notCircularReference, getCircularReplacer());
-// [{},{}]
-
 const requestListener = (req, res) => {
   //console.dir(req, { depth: 0 });
   const client = { ...req.client };
@@ -35,7 +27,7 @@ const requestListener = (req, res) => {
   try {
     const logObject = { ...client };
     fs.writeFileSync(
-      "./log.txt",
+      "./log.json",
       JSON.stringify(logObject, getCircularReplacer())
     );
     // file written successfully

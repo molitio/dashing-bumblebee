@@ -4,8 +4,7 @@
   "version": "0.0.0",
   "description": "Root package of Dashing Bumblebee",
   "scripts": {
-    "install": "yarn workspace @molitio/dashing-bumblebee-ui install",
-    "dev": "yarn workspace dashing-bumblebee-ui run dev"
+    "dev": "yarn workspaces foreach -p -i run dev"
   },
   "repository": {
     "type": "git",
