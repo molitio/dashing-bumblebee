@@ -4,6 +4,7 @@
   "description": "Place holder ",
   "main": "server.js",
   "scripts": {
+    "init": "tsc init -y",
     "dev": "nodemon"
   },
   "keywords": [],
