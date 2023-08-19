@@ -1,35 +1,36 @@
 {
   "name": "@molitio/dashing-bumblebee",
+  "private": true,
   "version": "0.0.0",
+  "description": "Root package of Dashing Bumblebee",
+  "scripts": {
+    "install": "yarn workspace @molitio/dashing-bumblebee-ui install",
+    "dev": "yarn workspace dashing-bumblebee-ui run dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/molitio/dashing-bumblebee.git"
+  },
+  "keywords": [
+    "molitio",
+    "ui"
+  ],
+  "author": "Peter Koller",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/molitio/dashing-bumblebee/issues"
+  },
+  "homepage": "https://github.com/molitio/dashing-bumblebee#readme",
   "packageManager": "yarn@3.4.1",
   "devDependencies": {
-    "@babel/core": "^7.22.10",
-    "@types/node": "20.5.1",
-    "@types/react": "18.2.20",
-    "@types/react-dom": "18.2.7",
-    "@typescript-eslint/eslint-plugin": "^5.56.0",
-    "@typescript-eslint/parser": "^5.56.0",
+    "@typescript-eslint/eslint-plugin": "^6.4.0",
+    "@typescript-eslint/parser": "^6.4.0",
     "@yarnpkg/cli": "^3.6.2",
     "@yarnpkg/core": "^3.5.3",
-    "@yarnpkg/pnpify": "^4.0.0-rc.39",
-    "eslint": "8.47.0",
-    "eslint-config-next": "13.4.18",
-    "ts-node": "^10.9.1",
-    "tslib": "^2.5.0",
-    "typescript": "^4.7.4"
+    "@yarnpkg/pnpify": "^4.0.0-rc.49",
+    "eslint": "8.47.0"
   },
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
-  "dependencies": {
-    "next": "13.4.18",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "react-is": "^18.2.0",
-    "react-redux": "^8.1.2",
-    "styled-components": "^5.3.6"
-  }
+  "workspaces": [
+    "packages/*"
+  ]
 }
