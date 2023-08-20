@@ -1,41 +1,13 @@
-const http = require("http");
-const fs = require("fs");
+const express = require("express");
+const chalk = require("chalk");
+const debug = require("debug")("app");
+const app = express();
 
-const getCircularReplacer = () => {
-  const seen = new WeakSet();
-  return (key, value) => {
-    if (typeof value === "object" && value !== null) {
-      if (seen.has(value)) {
-        return;
-      }
-      seen.add(value);
-    }
-    return value;
-  };
-};
+app.get("/", (req, res) => {
+  debug(`req url: ${chalk.green(req.url)}`);
+  res.send("Polo");
+});
 
-const requestListener = (req, res) => {
-  //console.dir(req, { depth: 0 });
-  const client = { ...req.client };
-  console.info("client: ", client);
-
-  try {
-    const logObject = { ...client };
-    fs.writeFileSync(
-      "./log.json",
-      JSON.stringify(logObject, getCircularReplacer())
-    );
-    // file written successfully
-  } catch (err) {
-    console.error(err);
-  }
-  res.write("Polo\n");
-  res.end();
-};
-
-const server = http.createServer();
-server.on("request", requestListener);
-
-server.listen(4242, () => {
-  console.log("Server is running");
+app.listen(8000, () => {
+  debug(`listening on ${chalk.green("8000")}`);
 });
