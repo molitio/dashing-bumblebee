@@ -3,7 +3,7 @@ const CopyPlugin = require("copy-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
 
 module.exports = {
-  entry: "./app",
+  entry: "./src",
   mode: process.env.NODE_ENV || "production",
 
   /** target value is runtime environment

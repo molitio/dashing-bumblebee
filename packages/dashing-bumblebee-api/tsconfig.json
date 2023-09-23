@@ -2,14 +2,23 @@
   "extends": "../../tsconfig.json",
   "compilerOptions": {
     "baseUrl": "./src",
-    "outDir": "./dist",
+    "outDir": "dist",
     "module": "commonjs",
-    "lib": ["DOM"],
+    "lib": ["DOM","es6"],
     "target": "ES2020",
     "moduleResolution": "node",
     "allowJs": true,
-    "forceConsistentCasingInFileNames": true
+    "sourceMap": true,
+    "forceConsistentCasingInFileNames": true,
+    "paths": {
+      "@/*": [
+        "./*"
+      ]
+    },
   },
+  "files": [
+"src/index.ts"
+],
   "include": ["**/*.ts"],
-  "exclude": ["node_modules", "*.json", "*.md"]
+  "exclude": ["node_modules", "*.json", "*.md", "dist"]
 }

@@ -1706,12 +1706,14 @@ __metadata:
   dependencies:
     "@types/debug": ^4
     "@types/express": ^4.17.17
+    "@types/node": ^20.6.3
     copy-webpack-plugin: ^11.0.0
     cross-env: ^7.0.3
     express: ^4.18.2
     nodemon: ^3.0.1
     terser-webpack-plugin: ^5.3.9
     ts-loader: ^9.4.4
+    tslib: ^2.6.2
     typescript: ^5.1.6
     webpack: ^5.88.2
     webpack-cli: ^5.1.4
@@ -2149,6 +2151,13 @@ __metadata:
   version: 20.5.3
   resolution: "@types/node@npm:20.5.3"
   checksum: fe67a0fd7402218bdf91523a2b1c2e41d619f7294b1a471e0a778b8bc7bb3fcf291aed12041bcbe9622d50a3d1295a9adea0e7e19bb9386a246bf66071404721
+  languageName: node
+  linkType: hard
+
+"@types/node@npm:^20.6.3":
+  version: 20.6.3
+  resolution: "@types/node@npm:20.6.3"
+  checksum: 444a6f1f41cfa8d3e20ce0108e6e43960fb2ae0e481f233bb1c14d6252aa63a92e021de561cd317d9fdb411688f871065f40175a1f18763282dee2613a08f8a3
   languageName: node
   linkType: hard
 
