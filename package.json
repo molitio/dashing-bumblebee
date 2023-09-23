@@ -4,7 +4,8 @@
   "version": "0.0.0",
   "description": "Root package of Dashing Bumblebee",
   "scripts": {
-    "dev": "yarn workspaces foreach -p -i run dev"
+    "dev": "yarn workspaces foreach -p -i run dev",
+    "build": "yarn workspaces foreach -p -i run build"
   },
   "repository": {
     "type": "git",
