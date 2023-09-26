@@ -1,7 +1,8 @@
-import { Container, Grid } from "@mui/system";
-import {CssBaseline} from "@mui/material";
-import {AppBar} from "@mui/material"
+/* import { Container,  } from "@mui/system"; */
+/* import {  Grid } from "@mui/material";
+import { AppBar } from "@mui/material"; */
 import type { Metadata } from "next";
+import { ThemeRegistry } from "../components";
 
 export const metadata: Metadata = {
   title: "Dashing Bubmlebee",
@@ -15,21 +16,23 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <CssBaseline />
-      <Container
-        component="body"
-        sx={{
-          margin: 0,
-          padding: 0,
-        }}
-      >
-        <Grid container>
-<Grid item>
-  <AppBar />
-</Grid>
-        {children}
-        </Grid>
-      </Container>
+      <body>
+        <ThemeRegistry>
+          {/*  <Container
+            sx={{
+              margin: 0,
+              padding: 0,
+            }}
+          >
+            <Grid container>
+              <Grid item>
+                <AppBar />
+              </Grid>
+            </Grid> 
+          </Container>*/}
+          {children}
+        </ThemeRegistry>
+      </body>
     </html>
   );
 }

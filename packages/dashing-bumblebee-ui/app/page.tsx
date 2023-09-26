@@ -1,5 +1,6 @@
-import Image from 'next/image'
-import { Grid } from "@mui/system";
+'use client'
+ 
+import { Grid } from "@mui/material";
 
 export default function Home() {
   return (

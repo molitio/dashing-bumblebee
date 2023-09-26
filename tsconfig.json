@@ -20,6 +20,9 @@
     "skipLibCheck": false,
     "forceConsistentCasingInFileNames": true,
     "allowJs": false,
-    "noEmit": true
+    "noEmit": true,
+    "paths": {
+      "@molitio/*": ["./packages/*"]
+    }
   }
 }
