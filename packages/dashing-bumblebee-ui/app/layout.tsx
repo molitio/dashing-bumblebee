@@ -1,5 +1,6 @@
-import { Container } from "@mui/system";
-import CssBaseline from "@mui/material/CssBaseline";
+import { Container, Grid } from "@mui/system";
+import {CssBaseline} from "@mui/material";
+import {AppBar} from "@mui/material"
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -14,15 +15,20 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-       <CssBaseline /> 
+      <CssBaseline />
       <Container
         component="body"
-       sx={{
+        sx={{
           margin: 0,
           padding: 0,
-        }} 
+        }}
       >
+        <Grid container>
+<Grid item>
+  <AppBar />
+</Grid>
         {children}
+        </Grid>
       </Container>
     </html>
   );
