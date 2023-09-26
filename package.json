@@ -28,7 +28,8 @@
     "@yarnpkg/cli": "^3.6.2",
     "@yarnpkg/core": "^3.5.3",
     "@yarnpkg/pnpify": "^4.0.0-rc.49",
-    "eslint": "8.47.0"
+    "eslint": "8.47.0",
+    "typescript": "5.2.2"
   },
   "workspaces": [
     "packages/*"
