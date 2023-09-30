@@ -357,6 +357,7 @@ __metadata:
     "@emotion/cache": ^11.11.0
     "@emotion/react": ^11.11.1
     "@emotion/styled": ^11.11.0
+    "@mui/icons-material": ^5.14.11
     "@mui/material": ^5.14.10
     "@mui/system": ^5.14.10
     "@types/node": 20.6.3
@@ -376,12 +377,14 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@molitio/dashing-bumblebee@workspace:."
   dependencies:
+    "@types/prop-types": ^15
     "@typescript-eslint/eslint-plugin": ^6.4.0
     "@typescript-eslint/parser": ^6.4.0
     "@yarnpkg/cli": ^3.6.2
     "@yarnpkg/core": ^3.5.3
     "@yarnpkg/pnpify": ^4.0.0-rc.49
     eslint: 8.47.0
+    prop-types: ^15.8.1
     typescript: 5.2.2
   languageName: unknown
   linkType: soft
@@ -412,6 +415,22 @@ __metadata:
   version: 5.14.10
   resolution: "@mui/core-downloads-tracker@npm:5.14.10"
   checksum: 3332de82d72a0900fc8eaacef388b28f740a5d0a1cd8f335a7e08ac451e56fc1f8eb5183d0e956c069ff0cdda30105e9af37784983f9d2e625ad6c930394783d
+  languageName: node
+  linkType: hard
+
+"@mui/icons-material@npm:^5.14.11":
+  version: 5.14.11
+  resolution: "@mui/icons-material@npm:5.14.11"
+  dependencies:
+    "@babel/runtime": ^7.22.15
+  peerDependencies:
+    "@mui/material": ^5.0.0
+    "@types/react": ^17.0.0 || ^18.0.0
+    react: ^17.0.0 || ^18.0.0
+  peerDependenciesMeta:
+    "@types/react":
+      optional: true
+  checksum: 69262147025d3e9ef45219bcaf5cb38eb84b4198ddb290a17b21a0877fcb01682caaeadce3c905b36a9cf127bbf6f9469f9fc9e1d3592b12476d6e758d900e41
   languageName: node
   linkType: hard
 
@@ -777,6 +796,13 @@ __metadata:
   version: 15.7.6
   resolution: "@types/prop-types@npm:15.7.6"
   checksum: 5f2796c7330461a556c4d18035fb914b372f96b1619a4f8302d07e1ea708e06a2dbe666dfcd8ff03f64c625aa4c12b31f677d0298a32910f5ab7ee51521d8086
+  languageName: node
+  linkType: hard
+
+"@types/prop-types@npm:^15":
+  version: 15.7.7
+  resolution: "@types/prop-types@npm:15.7.7"
+  checksum: 023b95f7dd82e1c594f51dcb93ec4c382600cef6eeee29a2ac7b782b92c0882eab8da16d4cbd6e18b39e85ac8d94ebf4ca02c6e248ce5b5fb4b16dbab5d82861
   languageName: node
   linkType: hard
 

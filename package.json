@@ -23,6 +23,7 @@
   "homepage": "https://github.com/molitio/dashing-bumblebee#readme",
   "packageManager": "yarn@3.6.3",
   "devDependencies": {
+    "@types/prop-types": "^15",
     "@typescript-eslint/eslint-plugin": "^6.4.0",
     "@typescript-eslint/parser": "^6.4.0",
     "@yarnpkg/cli": "^3.6.2",
@@ -33,5 +34,8 @@
   },
   "workspaces": [
     "packages/*"
-  ]
+  ],
+  "dependencies": {
+    "prop-types": "^15.8.1"
+  }
 }
