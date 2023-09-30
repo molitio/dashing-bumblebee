@@ -2,7 +2,7 @@ import React from "react";
 import AppBar from "@mui/material/AppBar";
 import Dashboard from "@mui/icons-material/Dashboard";
 import Toolbar from "@mui/material/Toolbar";
-import Grid from "@mui/material/Grid";
+import Box from "@mui/material/Box";
 import type { Metadata } from "next";
 import { ThemeRegistry } from "../src/components";
 import { ApplicationTheme } from "../src/components/theme/ApplicationTheme";
@@ -33,11 +33,7 @@ export default function RootLayout({
               <Dashboard />
             </Toolbar>
           </AppBar>
-          <Grid container spacing={2} sx={{ marginTop: 2 }}>
-            <Grid item xs={12} md={6}>
-              {children}
-            </Grid>
-          </Grid>
+          <Box>{children}</Box>
         </ThemeRegistry>
       </body>
     </html>

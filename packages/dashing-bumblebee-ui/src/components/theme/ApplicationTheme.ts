@@ -7,13 +7,19 @@ export const ApplicationTheme = {
       contrastText: "#FAFAFA",
     },
     secondary: {
-      main: "#6C9AC3D1",
+      main: "#A8C6D8",
       light: "",
       dark: "",
       contrastText: "#FAFAFA",
     },
     tertiary: {
       main: "#FAFAFA",
+      light: "",
+      dark: "",
+      contrastText: "#FAFAFA",
+    },
+    interactiveSecondary: {
+      main: "#D0D7DC",
       light: "",
       dark: "",
       contrastText: "#FAFAFA",
@@ -67,6 +73,8 @@ export const ApplicationTheme = {
           height: "100%",
           margin: 0,
           padding: 0,
+          fontSize: "16px",
+          lineHeight: "1.5",
         },
         "*": {
           boxSizing: "inherit",
