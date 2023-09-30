@@ -6,5 +6,6 @@
   "eslint.nodePath": ".yarn/sdks",
   "typescript.tsdk": ".yarn/sdks/typescript/lib",
   "typescript.enablePromptUseWorkspaceTsdk": true,
-  "vsintellicode.features.python.deepLearning": "default"
+  "vsintellicode.features.python.deepLearning": "default",
+  "vsintellicode.typescript.completionsEnabled": true
 }

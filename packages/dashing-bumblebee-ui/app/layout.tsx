@@ -1,11 +1,14 @@
-/* import { Container,  } from "@mui/system"; */
-/* import {  Grid } from "@mui/material";
-import { AppBar } from "@mui/material"; */
+import React from "react";
+import AppBar from "@mui/material/AppBar";
+import Dashboard from "@mui/icons-material/Dashboard";
+import Toolbar from "@mui/material/Toolbar";
+import Grid from "@mui/material/Grid";
 import type { Metadata } from "next";
-import { ThemeRegistry } from "../components";
+import { ThemeRegistry } from "../src/components";
+import {ApplicationTheme} from "../src/components/theme/ApplicationTheme";
 
 export const metadata: Metadata = {
-  title: "Dashing Bubmlebee",
+  title: "Dashing Bumblebee",
   description: "Mozdítsa meg a világot velünk!",
 };
 
@@ -14,23 +17,25 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+
   return (
     <html lang="en">
       <body>
         <ThemeRegistry>
-          {/*  <Container
-            sx={{
-              margin: 0,
-              padding: 0,
-            }}
-          >
-            <Grid container>
-              <Grid item>
-                <AppBar />
+          <Grid container direction="column">
+            <Grid item>
+              <AppBar position="sticky" elevation={8} sx={{backgroundColor: ApplicationTheme?.palette?.tertiary?.main, opacity: '0.4'}}>
+                <Toolbar>
+                  <Dashboard />
+                </Toolbar>
+              </AppBar>
+              <Grid item container>
+                <Grid item xl={8}>
+                  {children}
+                </Grid>
               </Grid>
-            </Grid> 
-          </Container>*/}
-          {children}
+            </Grid>
+          </Grid>
         </ThemeRegistry>
       </body>
     </html>
