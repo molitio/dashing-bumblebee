@@ -1,4 +1,4 @@
-export const ApplicationTheme  = {
+export const ApplicationTheme = {
   palette: {
     primary: {
       main: "#6C9AC3",
@@ -7,7 +7,7 @@ export const ApplicationTheme  = {
       contrastText: "#FAFAFA",
     },
     secondary: {
-      main: "#D0D7DC",
+      main: "#6C9AC3D1",
       light: "",
       dark: "",
       contrastText: "#FAFAFA",
@@ -82,7 +82,3 @@ export const ApplicationTheme  = {
     },
   },
 };
-
-
-
-

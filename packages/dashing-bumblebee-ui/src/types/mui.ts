@@ -6,7 +6,7 @@ export type Visual = {
     overflow?: string;
 };
 
-declare module '@mui/material/styles/createPalette'{
+declare module '@mui/material/styles/createPalette' {
     export interface Palette {
         tertiary: PaletteColor;
         stars?: {
@@ -27,6 +27,7 @@ declare module "@mui/material" {
             [key: string]: string;
         };
     }
+
     export interface TypeText {
         [key: string]: string;
     }

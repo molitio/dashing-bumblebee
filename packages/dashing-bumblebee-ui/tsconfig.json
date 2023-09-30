@@ -1,9 +1,14 @@
 {
-"extends": "../../tsconfig.json",
+  "extends": "../../tsconfig.json",
   "compilerOptions": {
     "target": "es5",
     "baseUrl": "./",
-    "lib": ["es6" ,"dom", "dom.iterable", "esnext"],
+    "lib": [
+      "es6",
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -23,11 +28,18 @@
         "name": "next"
       }
     ],
-    "typeRoots": ["./node_modules/@types",
+    "typeRoots": [
+      "./node_modules/@types",
       "./src/types"
     ]
-
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
-  "exclude": ["node_modules"]
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }
