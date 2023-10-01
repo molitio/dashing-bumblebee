@@ -1,8 +1,16 @@
 {
-  "include": ["**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules", "dist"],
+  "include": [
+    "**/*.ts",
+    "**/*.tsx"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ],
   "compilerOptions": {
-    "lib": ["ES2020"],
+    "lib": [
+      "ES2020"
+    ],
     "moduleResolution": "node",
     "target": "ES2020",
     "module": "ES2020",
@@ -20,6 +28,11 @@
     "skipLibCheck": false,
     "forceConsistentCasingInFileNames": true,
     "allowJs": false,
-    "noEmit": true
+    "noEmit": true,
+    "paths": {
+      "@molitio/*": [
+        "./packages/*"
+      ]
+    }
   }
 }

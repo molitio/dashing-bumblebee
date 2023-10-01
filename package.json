@@ -4,7 +4,8 @@
   "version": "0.0.0",
   "description": "Root package of Dashing Bumblebee",
   "scripts": {
-    "dev": "yarn workspaces foreach -p -i run dev"
+    "dev": "yarn workspaces foreach -p -i run dev",
+    "build": "yarn workspaces foreach -p -i run build"
   },
   "repository": {
     "type": "git",
@@ -20,16 +21,25 @@
     "url": "https://github.com/molitio/dashing-bumblebee/issues"
   },
   "homepage": "https://github.com/molitio/dashing-bumblebee#readme",
-  "packageManager": "yarn@3.4.1",
+  "packageManager": "yarn@3.6.3",
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^6.4.0",
-    "@typescript-eslint/parser": "^6.4.0",
+    "@types/prop-types": "^15",
+    "@typescript-eslint/eslint-plugin": "^6.7.3",
+    "@typescript-eslint/parser": "^6.7.3",
     "@yarnpkg/cli": "^3.6.2",
     "@yarnpkg/core": "^3.5.3",
     "@yarnpkg/pnpify": "^4.0.0-rc.49",
-    "eslint": "8.47.0"
+    "eslint": "^8.50.0",
+    "typescript": "5.2.2"
   },
   "workspaces": [
     "packages/*"
-  ]
+  ],
+  "dependencies": {
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-loader": "^4.0.2",
+    "eslint-plugin-prettier": "^5.0.0",
+    "eslint-plugin-react": "^7.33.2",
+    "prop-types": "^15.8.1"
+  }
 }

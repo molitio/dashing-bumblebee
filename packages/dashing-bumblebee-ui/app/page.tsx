@@ -1,95 +1,75 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+import Image from "next/image";
+import Box from "@mui/material/Box";
+import Container from "@mui/material/Container";
+import Typography from "@mui/material/Typography";
+import Button from "@mui/material/Button";
+import Stack from "@mui/material/Stack";
+import { ApplicationTheme } from "../src/components/theme/ApplicationTheme";
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+    <Box
+      sx={{
+        position: "relative",
+        zIndex: "0",
+        inset: "0",
+        height: "80vh",
+        width: "100%",
+        padding: "12em 0 0 0",
+      }}
+    >
+      <Box
+        component={Image}
+        src={"/background_combined.png"}
+        alt={`cover_page_background`}
+        sx={{
+          top: "0",
+          objectFit: "cover",
+          objectPosition: "bottom",
+          zIndex: "-9",
+        }}
+        fill
+      />
+      <Container
+        maxWidth="sm"
+        sx={{
+          color: ApplicationTheme.palette.text.main,
+          marginLeft: "4em",
+          textAlign: "center",
+          overflowWrap: "break-word",
+        }}
+      >
+        <Typography variant="h1" sx={{ fontSize: "2.4rem", fontWeight: 600 }}>
+          {`Mozdítsa meg a világot velünk!`}
+        </Typography>
+        <Typography variant="subtitle1">
+          {
+            "Személyre szabott közvetítés a szállítási igények és a megfelelő szállítmányozók között."
+          }
+        </Typography>
+        <Stack
+          spacing={2}
+          direction="row"
+          sx={{ padding: 2, justifyContent: "center" }}
+        >
+          <Button color="primary" variant="contained">
+            {"Telefon"}
+          </Button>
+          <Button
+            variant="contained"
+            sx={{
+              backgroundColor:
+                ApplicationTheme?.palette?.interactiveSecondary?.main,
+            }}
           >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+            {"email"}
+          </Button>
+        </Stack>
+        <Typography variant="subtitle2">
+          {"Egy kattintás a megoldásra."}
+        </Typography>
+      </Container>
+      <Box sx={{ height: "500px" }} />
+    </Box>
+  );
 }
