@@ -15,7 +15,7 @@ export default function Home() {
         inset: "0",
         height: "80vh",
         width: "100%",
-        padding: "10em 0 0 0",
+        padding: "12em 0 0 0",
       }}
     >
       <Box

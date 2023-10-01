@@ -1,11 +1,8 @@
 import React from "react";
-import AppBar from "@mui/material/AppBar";
-import Dashboard from "@mui/icons-material/Dashboard";
-import Toolbar from "@mui/material/Toolbar";
+import Image from "next/image";
 import Box from "@mui/material/Box";
 import type { Metadata } from "next";
 import { ThemeRegistry } from "../src/components";
-import { ApplicationTheme } from "../src/components/theme/ApplicationTheme";
 
 export const metadata: Metadata = {
   title: "Dashing Bumblebee",
@@ -21,19 +18,27 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <ThemeRegistry>
-          <AppBar
-            position="sticky"
-            elevation={8}
-            sx={{
-              backgroundColor: ApplicationTheme?.palette?.tertiary?.main,
-              opacity: "0.4",
-            }}
-          >
-            <Toolbar>
-              <Dashboard />
-            </Toolbar>
-          </AppBar>
-          <Box>{children}</Box>
+          <Box sx={{ position: "relative" }}>
+            {/*<AppBar*/}
+            {/*  position="sticky"*/}
+            {/*  elevation={8}*/}
+            {/*  sx={{*/}
+            {/*    backgroundColor: ApplicationTheme?.palette?.tertiary?.main,*/}
+            {/*  }}*/}
+            {/*>*/}
+            <Box
+              sx={{ margin: "1em 0 0 2em", position: "absolute", zIndex: 5 }}
+            >
+              <Image
+                src={"/logo_v1.svg"}
+                alt={"logo"}
+                width={150}
+                height={75}
+              />
+            </Box>
+            {/*   </AppBar>*/}
+            <Box>{children}</Box>
+          </Box>
         </ThemeRegistry>
       </body>
     </html>

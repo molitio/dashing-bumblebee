@@ -18,6 +18,12 @@ export const ApplicationTheme = {
       dark: "",
       contrastText: "#FAFAFA",
     },
+    navBar: {
+      main: "#FAFAFA0D",
+      light: "",
+      dark: "",
+      contrastText: "#FAFAFA",
+    },
     interactiveSecondary: {
       main: "#D0D7DC",
       light: "",
