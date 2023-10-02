@@ -12,11 +12,15 @@ export const ApplicationContextRoot = {
         app: {
           textContent: {
             appTitle: "First Inter Freight",
+            appDescription: "Mozdítsa meg a világot velünk!",
+          },
+          assetUrls: {
+            logoSvg: "/logo_v1.svg",
           },
         },
         footer: {
           textContent: {
-            maintainer: `© 2022 All Rights Reserved | molitio llc | ${"Dashing Bumblebee v0.1.0"}`,
+            maintainer: `© 2023 All Rights Reserved | molitio llc | Dashing Bumblebee v0.1.0"`,
           },
         },
       },
@@ -25,13 +29,12 @@ export const ApplicationContextRoot = {
       leafs: {
         cover: {
           textContent: {
-            title: "KAPCSOLAT",
-            formText:
-              "Írjon Nekünk az alábbi kapcsolati űrlapon keresztül vagy vegye fel velünk a kapcsolatot az alábbi elérhetőségek egyikén!",
-            email: "info@jelizaclean.com",
-            phoneMain: "+36 20 416 0391",
-            address1: "1134 Budapest",
-            address2: "Lehel utca 11.",
+            title: "Mozdítsa meg a világot velünk!",
+            subTitle:
+              "Személyre szabott közvetítés a szállítási igények és a megfelelő szállítmányozók között.",
+            subTitle2: "Egy kattintás a megoldásra.",
+            ctaPhone: "Telefon",
+            ctaEmail: "Email",
           },
           assetUrls: {
             backgroundImage: "/background_combined.png",
