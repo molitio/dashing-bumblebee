@@ -3,9 +3,12 @@ import Image from "next/image";
 import Box from "@mui/material/Box";
 import type { Metadata } from "next";
 import { ThemeRegistry } from "../src/components";
+import { ApplicationContextRoot } from "../context";
 
 export const metadata: Metadata = {
-  title: "Dashing Bumblebee",
+  title:
+    ApplicationContextRoot.contentRoot["common"].leafs["app"].textContent
+      .appTitle,
   description: "Mozdítsa meg a világot velünk!",
 };
 
