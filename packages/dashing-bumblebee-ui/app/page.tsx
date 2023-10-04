@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
@@ -6,8 +8,12 @@ import Button from "@mui/material/Button";
 import Stack from "@mui/material/Stack";
 import { ApplicationTheme } from "../src/components/theme/ApplicationTheme";
 import { ApplicationContextRoot } from "../context";
+import useMediaQuery from "@mui/material/useMediaQuery";
+import { useTheme } from "@mui/material/styles";
 
 export default function Home() {
+  const theme = useTheme();
+
   return (
     <Box
       sx={{
@@ -26,7 +32,7 @@ export default function Home() {
         sx={{
           top: "0",
           objectFit: "cover",
-          objectPosition: "bottom",
+          objectPosition: "center right",
           zIndex: "-9",
         }}
         fill
@@ -35,7 +41,7 @@ export default function Home() {
         maxWidth="sm"
         sx={{
           color: ApplicationTheme.palette.text.main,
-          marginLeft: "4em",
+          marginLeft: useMediaQuery(theme.breakpoints.down("sm")) ? "0" : "4em",
           textAlign: "center",
           overflowWrap: "break-word",
         }}
