@@ -7,9 +7,13 @@ import { ApplicationContextRoot } from "../context";
 
 export const metadata: Metadata = {
   title:
-    ApplicationContextRoot.contentRoot["common"].leafs["app"].textContent
-      .appTitle,
-  description: "Mozdítsa meg a világot velünk!",
+    ApplicationContextRoot.contentRoot["common"].leafs["app"].textContent[
+      "appTitle"
+    ],
+  description:
+    ApplicationContextRoot.contentRoot["common"].leafs["app"].textContent[
+      "appDescription"
+    ],
 };
 
 export default function RootLayout({
@@ -33,7 +37,10 @@ export default function RootLayout({
               sx={{ margin: "1em 0 0 2em", position: "absolute", zIndex: 5 }}
             >
               <Image
-                src={"/logo_v1.svg"}
+                src={
+                  ApplicationContextRoot.contentRoot["common"].leafs["app"]
+                    .assetUrls["logoSvg"]
+                }
                 alt={"logo"}
                 width={150}
                 height={75}
