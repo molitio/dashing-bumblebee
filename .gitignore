@@ -62,5 +62,5 @@ generated
 # typescript
 next-env.d.ts
 
-**/values.yaml
+values.yaml
 
