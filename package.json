@@ -5,7 +5,8 @@
   "description": "Root package of Dashing Bumblebee",
   "scripts": {
     "dev": "yarn workspaces foreach -p -i run dev",
-    "build": "yarn workspaces foreach -p -i run build"
+    "build": "yarn workspaces foreach -p -i run build",
+    "provision:local": "yarn workspace @molitio/dashing-bumblebee-k8s-deploy provision:local"
   },
   "repository": {
     "type": "git",
@@ -15,7 +16,7 @@
     "molitio",
     "ui"
   ],
-  "author": "Peter Koller",
+  "author": "molitio",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/molitio/dashing-bumblebee/issues"

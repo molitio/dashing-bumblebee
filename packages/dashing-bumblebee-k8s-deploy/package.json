@@ -1,0 +1,12 @@
+{
+  "name": "@molitio/dashing-bumblebee-k8s-deploy",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "provision:local": "kubectl apply -f hasura"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

@@ -350,9 +350,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@molitio/dashing-bumblebee-api@workspace:packages/dashing-bumblebee-api":
+"@molitio/dashing-bumblebee-k8s-deploy@workspace:packages/dashing-bumblebee-k8s-deploy":
   version: 0.0.0-use.local
-  resolution: "@molitio/dashing-bumblebee-api@workspace:packages/dashing-bumblebee-api"
+  resolution: "@molitio/dashing-bumblebee-k8s-deploy@workspace:packages/dashing-bumblebee-k8s-deploy"
   languageName: unknown
   linkType: soft
 

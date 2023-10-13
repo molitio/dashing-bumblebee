@@ -43,6 +43,24 @@ yarn-error.log*
 
 # typescript
 *.tsbuildinfo
-.DS_Store
 
 generated
+
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# typescript
+next-env.d.ts
+
+**/values.yaml
+
