@@ -1,0 +1,18 @@
+table:
+  name: user_private
+  schema: resource_db_schema
+object_relationships:
+  - name: resource
+    using:
+      foreign_key_constraint_on:
+        column: resource_owner_actual
+        table:
+          name: resource
+          schema: resource_db_schema
+  - name: user_public
+    using:
+      foreign_key_constraint_on:
+        column: id
+        table:
+          name: user_public
+          schema: resource_db_schema

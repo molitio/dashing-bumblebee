@@ -17,7 +17,7 @@
 *.orig
 *~
 # Various IDEs
-.project
+packages/dashing-bumblebee-resource-db/DBeaver/.project
 .idea/
 *.tmproj
 .vscode/

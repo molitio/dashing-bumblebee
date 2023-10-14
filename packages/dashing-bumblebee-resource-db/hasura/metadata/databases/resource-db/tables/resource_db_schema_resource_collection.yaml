@@ -1,0 +1,3 @@
+table:
+  name: resource_collection
+  schema: resource_db_schema

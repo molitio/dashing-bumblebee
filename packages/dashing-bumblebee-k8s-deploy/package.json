@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "provision:local": "kubectl apply -f hasura"
+    "provision:local": "kubectl apply -f hasura-k8s",
+    "dev": "docker-compose up -d"
   },
   "keywords": [],
   "author": "",
