@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "schema": "cross-env gq http://localhost:8080/v1/graphql -H 'X-Hasura-Admin-Secret: devtest2023' --introspect > schema.graphql",
+    "schema": "cross-env gq http://localhost:8080/v1/graphql -H 'X-Hasura-Admin-Secret: ' --introspect > schema.graphql",
     "hasura:console": "hasura console --envfile .env --no-browser"
   },
   "keywords": [],
