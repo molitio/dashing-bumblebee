@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "schema": "cross-env gq http://localhost:8080/v1/graphql -H 'X-Hasura-Admin-Secret: ' --introspect > schema.graphql",
-    "hasura:console": "hasura console --envfile .env --no-browser"
+    "hasura:console": "hasura console --envfile .env --no-browser",
+    "provision:local": "kubectl apply -f hasura-k8s",
+    "dev": "docker-compose up -d"
   },
   "keywords": [],
   "author": "",

@@ -1,7 +1,7 @@
 version: 3
 endpoint: http://localhost:8080
 metadata_directory: hasura/metadata
-migration_directory: hasura/migrations
+migrations_directory: hasura/migrations
 seeds_directory: hasura/seeds
 actions:
   kind: synchronous
