@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "yarn workspaces foreach -p -i run dev",
     "build": "yarn workspaces foreach -p -i run build",
+    "dev:docker": "yarn workspace @molitio/dashing-bumblebee-resource-db dev & yarn workspace @molitio/dashing-bumblebee-resource-db hasura:console",
     "provision:local": "yarn workspace @molitio/dashing-bumblebee-k8s-deploy provision:local"
   },
   "repository": {

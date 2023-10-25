@@ -15,6 +15,12 @@ example hasura/.env
 
     HASURA_GRAPHQL_ADMIN_SECRET=eightstartpassword 
 
+start from root of the monorepo with:
+    
+        yarn dev:docker
+
+access the console via: http://localhost:9695/
+
 ## Hasura
 
 Initial migration created with
