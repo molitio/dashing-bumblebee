@@ -23,5 +23,28 @@ Initial migration created with
 
 ### Migrations
 
+Schema rename in PG
 
-
+```
+DO LANGUAGE plpgsql
+$body$
+DECLARE
+l_old_schema NAME = 'old_schema';
+l_new_schema NAME = 'new_schema';
+l_sql TEXT;
+BEGIN
+FOR l_sql IN
+SELECT
+format('ALTER TABLE %I.%I SET SCHEMA %I', n.nspname, c.relname, l_new_schema)
+FROM pg_class c
+JOIN pg_namespace n ON n.oid = c.relnamespace
+WHERE
+n.nspname = l_old_schema AND
+c.relkind = 'r'
+LOOP
+RAISE NOTICE 'appliying %', l_sql;
+EXECUTE l_sql;
+END LOOP;
+END;
+$body$;
+```

@@ -1,4 +1,0 @@
-- "!include resource_db_schema_resource.yaml"
-- "!include resource_db_schema_resource_collection.yaml"
-- "!include resource_db_schema_user_private.yaml"
-- "!include resource_db_schema_user_public.yaml"

@@ -1,7 +1,0 @@
-table:
-  name: resource
-  schema: resource_db_schema
-object_relationships:
-  - name: user_private
-    using:
-      foreign_key_constraint_on: resource_owner_actual
