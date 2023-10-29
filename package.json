@@ -3,10 +3,15 @@
   "private": true,
   "version": "0.0.0",
   "description": "Root package of Dashing Bumblebee",
+  "config": {
+    "currentMigration": "init"
+  },
   "scripts": {
     "dev": "yarn workspaces foreach -p -i run dev",
     "build": "yarn workspaces foreach -p -i run build",
-    "dev:docker": "yarn workspace @molitio/dashing-bumblebee-resource-db dev & yarn workspace @molitio/dashing-bumblebee-resource-db hasura:console",
+    "dev:docker": "yarn workspace @molitio/dashing-bumblebee-resource-db dev",
+    "dev:console": "yarn workspace @molitio/dashing-bumblebee-resource-db hasura:console",
+    "hasura-migration:create": "yarn dotenv cross-var -- hasura migrate create %CURRENT_MIGRATION% --project packages/dashing-bumblebee-resource-db --endpoint %HASURA_GRAPHQL_DATABASE_URL% --admin-secret %HASURA_GRAPHQL_ADMIN_SECRET%",
     "provision:local": "yarn workspace @molitio/dashing-bumblebee-k8s-deploy provision:local"
   },
   "repository": {
@@ -31,17 +36,18 @@
     "@yarnpkg/cli": "^3.6.2",
     "@yarnpkg/core": "^3.5.3",
     "@yarnpkg/pnpify": "^4.0.0-rc.49",
+    "cross-var": "^1.1.0",
+    "dotenv": "^16.3.1",
+    "dotenv-cli": "^7.3.0",
     "eslint": "^8.50.0",
-    "typescript": "5.2.2"
-  },
-  "workspaces": [
-    "packages/*"
-  ],
-  "dependencies": {
     "eslint-config-prettier": "^9.0.0",
     "eslint-loader": "^4.0.2",
     "eslint-plugin-prettier": "^5.0.0",
     "eslint-plugin-react": "^7.33.2",
-    "prop-types": "^15.8.1"
-  }
+    "prop-types": "^15.8.1",
+    "typescript": "5.2.2"
+  },
+  "workspaces": [
+    "packages/*"
+  ]
 }
