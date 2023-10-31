@@ -1,16 +1,14 @@
 {
   "name": "@molitio/dashing-bumblebee-resource-db",
   "version": "0.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Data API for Dashing Bumblebee",
   "scripts": {
     "schema": "cross-env gq http://localhost:8080/v1/graphql -H 'X-Hasura-Admin-Secret: ' --introspect > schema.graphql",
-    "hasura:console": "hasura console --envfile .env --endpoint http://localhost:8080 --no-browser",
     "provision:local": "kubectl apply -f hasura-k8s",
-    "dev": "docker-compose down && docker-compose up"
+    "dev": "node -e \"console.log('script started at: %s', Date())\""
   },
   "keywords": [],
-  "author": "",
+  "author": "Peter Koller",
   "license": "ISC",
   "devDependencies": {
     "@types/graphqurl": "^1",

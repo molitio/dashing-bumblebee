@@ -25,9 +25,30 @@ access the console via: http://localhost:9695/
 
 Initial migration created with
 
-    hasura migrate create "init" --from-server --schema resource_db_schema
+    hasura migrate create "init" --from-server --database-name default
 
 ### Migrations
+
+Create initial migration from the monorepo root:
+
+```
+
+yarn workspace @molitio/dashing-bumblebee-resource-db hasura migrate create "init" --from-server --database-name default
+
+```
+
+Apply migrations via these commands:
+
+```
+
+yarn workspace @molitio/dashing-bumblebee-resource-db hasura metadata apply
+yarn workspace @molitio/dashing-bumblebee-resource-db hasura migrate apply --database-name <database-name>
+yarn workspace @molitio/dashing-bumblebee-resource-db hasura metadata reload
+
+```
+
+
+yarn workspace @molitio/dashing-bumblebee-resource-db add -D postgres
 
 Schema rename in PG
 
