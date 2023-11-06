@@ -11,7 +11,7 @@
     "dev:compose": "docker-compose -f ./docker-compose.dev.yaml down && docker-compose -f ./docker-compose.dev.yaml up -d && yarn hasura:console",
     "build": "yarn workspaces foreach -p -i run build",
     "dev:docker": "yarn workspace @molitio/dashing-bumblebee-resource-db dev",
-    "hasura:console": "hasura console --project packages/dashing-bumblebee-resource-db/hasura --envfile ../../../.env --no-browser",
+    "hasura:console": "yarn dotenv cross-var -- hasura console --project packages/dashing-bumblebee-resource-db/hasura --envfile ../../../.env --no-browser  --admin-secret %HASURA_GRAPHQL_ADMIN_SECRET%",
     "hasura-migration:create": "yarn dotenv cross-var -- hasura migrate create %CURRENT_MIGRATION% --project packages/dashing-bumblebee-resource-db/hasura --endpoint %HASURA_GRAPHQL_DATABASE_URL% --admin-secret %HASURA_GRAPHQL_ADMIN_SECRET%",
     "provision:local": "yarn workspace @molitio/dashing-bumblebee-k8s-deploy provision:local"
   },
