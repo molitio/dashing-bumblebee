@@ -6,7 +6,9 @@ import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import Stack from "@mui/material/Stack";
+import PhoneIcon from "@mui/icons-material/Phone";
 import { ApplicationTheme } from "../src/components/theme/ApplicationTheme";
+import AlternateEmailIcon from "@mui/icons-material/AlternateEmail";
 import { ApplicationContextRoot } from "../context";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { useTheme } from "@mui/material/styles";
@@ -59,7 +61,11 @@ export default function Home() {
               .textContent["title"]
           }
         </Typography>
-        <Typography variant="subtitle1" sx={{ overflowWrap: "break-word" }}>
+        <Typography
+          variant="subtitle1"
+          fontWeight="200"
+          sx={{ overflowWrap: "break-word" }}
+        >
           {
             ApplicationContextRoot.contentRoot["home"].leafs["cover"]
               .textContent["subTitle"]
@@ -67,27 +73,42 @@ export default function Home() {
         </Typography>
         <Stack
           spacing={2}
-          direction="row"
-          sx={{ padding: 2, justifyContent: "center" }}
+          direction="column"
+          sx={{ padding: 2, justifyContent: "left" }}
         >
-          <Button color="primary" variant="contained">
-            {
-              ApplicationContextRoot.contentRoot["home"].leafs["cover"]
-                .textContent["ctaPhone"]
-            }
-          </Button>
-          <Button
-            variant="contained"
-            sx={{
-              backgroundColor:
-                ApplicationTheme?.palette?.interactiveSecondary?.main,
-            }}
-          >
-            {
-              ApplicationContextRoot.contentRoot["home"].leafs["cover"]
-                .textContent["ctaEmail"]
-            }
-          </Button>
+          <Stack direction="row" alignItems="center">
+            <Button color="primary" variant="contained">
+              <PhoneIcon />
+            </Button>
+            <Typography
+              variant="button"
+              sx={{ overflowWrap: "break-word", padding: "0.5em" }}
+            >
+              {`+36 00 000 0000`}{" "}
+            </Typography>
+          </Stack>
+          <Stack direction="row" alignItems="center">
+            <Button
+              color="primary"
+              variant="contained"
+              sx={{
+                backgroundColor:
+                  ApplicationTheme?.palette?.interactiveSecondary?.main,
+              }}
+            >
+              {
+                <AlternateEmailIcon />
+                /*               ApplicationContextRoot.contentRoot["home"].leafs["cover"]\
+              .textContent["ctaEmail"] */
+              }
+            </Button>{" "}
+            <Typography
+              variant="button"
+              sx={{ overflowWrap: "break-word", padding: "0.5em" }}
+            >
+              {`+36 00 000 0000`}{" "}
+            </Typography>
+          </Stack>
         </Stack>
         <Typography variant="subtitle2">
           {
