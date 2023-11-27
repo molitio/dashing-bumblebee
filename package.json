@@ -13,7 +13,9 @@
     "dev:docker": "yarn workspace @molitio/dashing-bumblebee-resource-db dev",
     "hasura:console": "yarn dotenv cross-var -- hasura console --project packages/dashing-bumblebee-resource-db/hasura --envfile ../../../.env --no-browser  --admin-secret %HASURA_GRAPHQL_ADMIN_SECRET%",
     "hasura-migration:create": "yarn dotenv cross-var -- hasura migrate create %CURRENT_MIGRATION% --project packages/dashing-bumblebee-resource-db/hasura --endpoint %HASURA_GRAPHQL_DATABASE_URL% --admin-secret %HASURA_GRAPHQL_ADMIN_SECRET%",
-    "provision:local": "yarn workspace @molitio/dashing-bumblebee-k8s-deploy provision:local"
+    "provision:local": "yarn workspace @molitio/dashing-bumblebee-k8s-deploy provision:local",
+    "bootstrap": "yarn dlx @yarnpkg/sdks",
+    "lint": "yarn prettier . --write"
   },
   "repository": {
     "type": "git",
@@ -45,6 +47,7 @@
     "eslint-loader": "^4.0.2",
     "eslint-plugin-prettier": "^5.0.0",
     "eslint-plugin-react": "^7.33.2",
+    "prettier": "^3.1.0",
     "prop-types": "^15.8.1",
     "typescript": "5.2.2"
   },

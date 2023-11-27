@@ -71,4 +71,4 @@ services:
 #     - .env
 volumes:
   db_data:
-   name: resource_db_data
+    name: resource_db_data

@@ -6,10 +6,14 @@ import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import Stack from "@mui/material/Stack";
+import PhoneIcon from "@mui/icons-material/Phone";
 import { ApplicationTheme } from "../src/components/theme/ApplicationTheme";
+import AlternateEmailIcon from "@mui/icons-material/AlternateEmail";
 import { ApplicationContextRoot } from "../context";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { useTheme } from "@mui/material/styles";
+import Link from "next/link";
+import style from "./style/page.module.css";
 
 export default function Home() {
   const theme = useTheme();
@@ -48,8 +52,9 @@ export default function Home() {
       >
         <Typography
           variant="h1"
+          color={ApplicationTheme.palette.text.main}
           sx={{
-            fontSize: "2.4rem",
+            fontSize: "2rem",
             fontWeight: 600,
             overflowWrap: "break-word",
           }}
@@ -59,7 +64,11 @@ export default function Home() {
               .textContent["title"]
           }
         </Typography>
-        <Typography variant="subtitle1" sx={{ overflowWrap: "break-word" }}>
+        <Typography
+          variant="subtitle1"
+          fontWeight="200"
+          sx={{ overflowWrap: "break-word" }}
+        >
           {
             ApplicationContextRoot.contentRoot["home"].leafs["cover"]
               .textContent["subTitle"]
@@ -67,32 +76,62 @@ export default function Home() {
         </Typography>
         <Stack
           spacing={2}
-          direction="row"
-          sx={{ padding: 2, justifyContent: "center" }}
+          direction="column"
+          sx={{ padding: 2, justifyContent: "left" }}
         >
-          <Button color="primary" variant="contained">
-            {
-              ApplicationContextRoot.contentRoot["home"].leafs["cover"]
-                .textContent["ctaPhone"]
-            }
-          </Button>
-          <Button
-            variant="contained"
-            sx={{
-              backgroundColor:
+          <Link className={style.link} href={ApplicationContextRoot.contentRoot["home"].leafs["cover"].assetUrls["phoneNumberHref"]} style={{
+              
+            
+            }}>
+          <Stack direction="row" alignItems="center">
+            <Button color="primary" variant="contained">
+              <PhoneIcon />
+            </Button>
+            <Typography
+              variant="button"
+              sx={{ overflowWrap: "break-word", padding: "0.5em" }}
+            >
+               {
+                 ApplicationContextRoot.contentRoot["home"].leafs["cover"]
+              .textContent["phoneNumber"]
+          }
+            </Typography>
+          </Stack>
+            </Link>
+            <Link className={style.link}  href={ApplicationContextRoot.contentRoot["home"].leafs["cover"].assetUrls["infoEmailHref"]}>
+          <Stack direction="row" alignItems="center">
+           
+              
+            <Button
+              color="primary"
+              variant="contained"
+              sx={{
+                backgroundColor:
                 ApplicationTheme?.palette?.interactiveSecondary?.main,
-            }}
-          >
-            {
-              ApplicationContextRoot.contentRoot["home"].leafs["cover"]
-                .textContent["ctaEmail"]
-            }
-          </Button>
+              }}
+              >
+              {
+                <AlternateEmailIcon />
+                
+              }
+            </Button>{" "}
+            <Typography
+              variant="button"
+              fontSize={"0.8em"}
+              sx={{ overflowWrap: "break-word", padding: "0.5em" }}
+              >
+                  {
+                    ApplicationContextRoot.contentRoot["home"].leafs["cover"]
+                    .textContent["infoEmail"]
+                  }
+            </Typography>
+          </Stack>
+          </Link>
         </Stack>
-        <Typography variant="subtitle2">
+        <Typography variant="subtitle2" sx={{textAlign: "left", padding: "0 0 0 2em"}}>
           {
             ApplicationContextRoot.contentRoot["home"].leafs["cover"]
-              .textContent["subTitle2"]
+            .textContent["subTitle2"]
           }
         </Typography>
       </Container>

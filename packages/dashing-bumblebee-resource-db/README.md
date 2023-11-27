@@ -13,10 +13,10 @@ In the hasura folder a .env file should be created that is needed for hasura con
 
 example hasura/.env
 
-    HASURA_GRAPHQL_ADMIN_SECRET=eightstartpassword 
+    HASURA_GRAPHQL_ADMIN_SECRET=eightstartpassword
 
 start from root of the monorepo with:
-    
+
         yarn dev:docker
 
 access the console via: http://localhost:9695/
@@ -46,7 +46,6 @@ yarn workspace @molitio/dashing-bumblebee-resource-db hasura migrate apply --dat
 yarn workspace @molitio/dashing-bumblebee-resource-db hasura metadata reload
 
 ```
-
 
 yarn workspace @molitio/dashing-bumblebee-resource-db add -D postgres
 

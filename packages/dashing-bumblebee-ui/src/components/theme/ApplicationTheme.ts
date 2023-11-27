@@ -36,7 +36,7 @@ export const ApplicationTheme = {
       interactive: "#c1a87dff",
     },
     text: {
-      main: "#333333",
+      main: "#0f528aff",
       inverse: "#FAFAFA ",
       interactive: "#c1a87dff",
       disabled: "",

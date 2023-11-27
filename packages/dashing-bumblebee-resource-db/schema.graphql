@@ -4,12 +4,18 @@ schema {
   subscription: subscription_root
 }
 
-"""whether this query should be cached (Hasura Cloud only)"""
+"""
+whether this query should be cached (Hasura Cloud only)
+"""
 directive @cached(
-  """measured in seconds"""
+  """
+  measured in seconds
+  """
   ttl: Int! = 60
 
-  """refresh the cache entry"""
+  """
+  refresh the cache entry
+  """
   refresh: Boolean! = false
 ) on QUERY
 
@@ -21,7 +27,9 @@ input String_comparison_exp {
   _gt: String
   _gte: String
 
-  """does the column match the given case-insensitive pattern"""
+  """
+  does the column match the given case-insensitive pattern
+  """
   _ilike: String
   _in: [String!]
 
@@ -31,13 +39,17 @@ input String_comparison_exp {
   _iregex: String
   _is_null: Boolean
 
-  """does the column match the given pattern"""
+  """
+  does the column match the given pattern
+  """
   _like: String
   _lt: String
   _lte: String
   _neq: String
 
-  """does the column NOT match the given case-insensitive pattern"""
+  """
+  does the column NOT match the given case-insensitive pattern
+  """
   _nilike: String
   _nin: [String!]
 
@@ -46,7 +58,9 @@ input String_comparison_exp {
   """
   _niregex: String
 
-  """does the column NOT match the given pattern"""
+  """
+  does the column NOT match the given pattern
+  """
   _nlike: String
 
   """
@@ -54,7 +68,9 @@ input String_comparison_exp {
   """
   _nregex: String
 
-  """does the column NOT match the given SQL regular expression"""
+  """
+  does the column NOT match the given SQL regular expression
+  """
   _nsimilar: String
 
   """
@@ -62,81 +78,111 @@ input String_comparison_exp {
   """
   _regex: String
 
-  """does the column match the given SQL regular expression"""
+  """
+  does the column match the given SQL regular expression
+  """
   _similar: String
 }
 
-"""ordering argument of a cursor"""
+"""
+ordering argument of a cursor
+"""
 enum cursor_ordering {
-  """ascending ordering of the cursor"""
+  """
+  ascending ordering of the cursor
+  """
   ASC
 
-  """descending ordering of the cursor"""
+  """
+  descending ordering of the cursor
+  """
   DESC
 }
 
-"""mutation root"""
+"""
+mutation root
+"""
 type mutation_root {
   """
   delete data from the table: "resource_db_schema.resource"
   """
   delete_resource_db_schema_resource(
-    """filter the rows which have to be deleted"""
+    """
+    filter the rows which have to be deleted
+    """
     where: resource_db_schema_resource_bool_exp!
   ): resource_db_schema_resource_mutation_response
 
   """
   delete single row from the table: "resource_db_schema.resource"
   """
-  delete_resource_db_schema_resource_by_pk(id: uuid!): resource_db_schema_resource
+  delete_resource_db_schema_resource_by_pk(
+    id: uuid!
+  ): resource_db_schema_resource
 
   """
   delete data from the table: "resource_db_schema.resource_collection"
   """
   delete_resource_db_schema_resource_collection(
-    """filter the rows which have to be deleted"""
+    """
+    filter the rows which have to be deleted
+    """
     where: resource_db_schema_resource_collection_bool_exp!
   ): resource_db_schema_resource_collection_mutation_response
 
   """
   delete single row from the table: "resource_db_schema.resource_collection"
   """
-  delete_resource_db_schema_resource_collection_by_pk(id: uuid!): resource_db_schema_resource_collection
+  delete_resource_db_schema_resource_collection_by_pk(
+    id: uuid!
+  ): resource_db_schema_resource_collection
 
   """
   delete data from the table: "resource_db_schema.user_private"
   """
   delete_resource_db_schema_user_private(
-    """filter the rows which have to be deleted"""
+    """
+    filter the rows which have to be deleted
+    """
     where: resource_db_schema_user_private_bool_exp!
   ): resource_db_schema_user_private_mutation_response
 
   """
   delete single row from the table: "resource_db_schema.user_private"
   """
-  delete_resource_db_schema_user_private_by_pk(id: uuid!): resource_db_schema_user_private
+  delete_resource_db_schema_user_private_by_pk(
+    id: uuid!
+  ): resource_db_schema_user_private
 
   """
   delete data from the table: "resource_db_schema.user_public"
   """
   delete_resource_db_schema_user_public(
-    """filter the rows which have to be deleted"""
+    """
+    filter the rows which have to be deleted
+    """
     where: resource_db_schema_user_public_bool_exp!
   ): resource_db_schema_user_public_mutation_response
 
   """
   delete single row from the table: "resource_db_schema.user_public"
   """
-  delete_resource_db_schema_user_public_by_pk(id: uuid!): resource_db_schema_user_public
+  delete_resource_db_schema_user_public_by_pk(
+    id: uuid!
+  ): resource_db_schema_user_public
 
   """
   insert data into the table: "resource_db_schema.resource"
   """
   insert_resource_db_schema_resource(
-    """the rows to be inserted"""
+    """
+    the rows to be inserted
+    """
     objects: [resource_db_schema_resource_insert_input!]!
 
-    """upsert condition"""
+    """
+    upsert condition
+    """
     on_conflict: resource_db_schema_resource_on_conflict
   ): resource_db_schema_resource_mutation_response
 
@@ -144,10 +190,14 @@ type mutation_root {
   insert data into the table: "resource_db_schema.resource_collection"
   """
   insert_resource_db_schema_resource_collection(
-    """the rows to be inserted"""
+    """
+    the rows to be inserted
+    """
     objects: [resource_db_schema_resource_collection_insert_input!]!
 
-    """upsert condition"""
+    """
+    upsert condition
+    """
     on_conflict: resource_db_schema_resource_collection_on_conflict
   ): resource_db_schema_resource_collection_mutation_response
 
@@ -155,10 +205,14 @@ type mutation_root {
   insert a single row into the table: "resource_db_schema.resource_collection"
   """
   insert_resource_db_schema_resource_collection_one(
-    """the row to be inserted"""
+    """
+    the row to be inserted
+    """
     object: resource_db_schema_resource_collection_insert_input!
 
-    """upsert condition"""
+    """
+    upsert condition
+    """
     on_conflict: resource_db_schema_resource_collection_on_conflict
   ): resource_db_schema_resource_collection
 
@@ -166,10 +220,14 @@ type mutation_root {
   insert a single row into the table: "resource_db_schema.resource"
   """
   insert_resource_db_schema_resource_one(
-    """the row to be inserted"""
+    """
+    the row to be inserted
+    """
     object: resource_db_schema_resource_insert_input!
 
-    """upsert condition"""
+    """
+    upsert condition
+    """
     on_conflict: resource_db_schema_resource_on_conflict
   ): resource_db_schema_resource
 
@@ -177,10 +235,14 @@ type mutation_root {
   insert data into the table: "resource_db_schema.user_private"
   """
   insert_resource_db_schema_user_private(
-    """the rows to be inserted"""
+    """
+    the rows to be inserted
+    """
     objects: [resource_db_schema_user_private_insert_input!]!
 
-    """upsert condition"""
+    """
+    upsert condition
+    """
     on_conflict: resource_db_schema_user_private_on_conflict
   ): resource_db_schema_user_private_mutation_response
 
@@ -188,10 +250,14 @@ type mutation_root {
   insert a single row into the table: "resource_db_schema.user_private"
   """
   insert_resource_db_schema_user_private_one(
-    """the row to be inserted"""
+    """
+    the row to be inserted
+    """
     object: resource_db_schema_user_private_insert_input!
 
-    """upsert condition"""
+    """
+    upsert condition
+    """
     on_conflict: resource_db_schema_user_private_on_conflict
   ): resource_db_schema_user_private
 
@@ -199,10 +265,14 @@ type mutation_root {
   insert data into the table: "resource_db_schema.user_public"
   """
   insert_resource_db_schema_user_public(
-    """the rows to be inserted"""
+    """
+    the rows to be inserted
+    """
     objects: [resource_db_schema_user_public_insert_input!]!
 
-    """upsert condition"""
+    """
+    upsert condition
+    """
     on_conflict: resource_db_schema_user_public_on_conflict
   ): resource_db_schema_user_public_mutation_response
 
@@ -210,10 +280,14 @@ type mutation_root {
   insert a single row into the table: "resource_db_schema.user_public"
   """
   insert_resource_db_schema_user_public_one(
-    """the row to be inserted"""
+    """
+    the row to be inserted
+    """
     object: resource_db_schema_user_public_insert_input!
 
-    """upsert condition"""
+    """
+    upsert condition
+    """
     on_conflict: resource_db_schema_user_public_on_conflict
   ): resource_db_schema_user_public
 
@@ -221,10 +295,14 @@ type mutation_root {
   update data of the table: "resource_db_schema.resource"
   """
   update_resource_db_schema_resource(
-    """sets the columns of the filtered rows to the given values"""
+    """
+    sets the columns of the filtered rows to the given values
+    """
     _set: resource_db_schema_resource_set_input
 
-    """filter the rows which have to be updated"""
+    """
+    filter the rows which have to be updated
+    """
     where: resource_db_schema_resource_bool_exp!
   ): resource_db_schema_resource_mutation_response
 
@@ -232,7 +310,9 @@ type mutation_root {
   update single row of the table: "resource_db_schema.resource"
   """
   update_resource_db_schema_resource_by_pk(
-    """sets the columns of the filtered rows to the given values"""
+    """
+    sets the columns of the filtered rows to the given values
+    """
     _set: resource_db_schema_resource_set_input
     pk_columns: resource_db_schema_resource_pk_columns_input!
   ): resource_db_schema_resource
@@ -241,10 +321,14 @@ type mutation_root {
   update data of the table: "resource_db_schema.resource_collection"
   """
   update_resource_db_schema_resource_collection(
-    """sets the columns of the filtered rows to the given values"""
+    """
+    sets the columns of the filtered rows to the given values
+    """
     _set: resource_db_schema_resource_collection_set_input
 
-    """filter the rows which have to be updated"""
+    """
+    filter the rows which have to be updated
+    """
     where: resource_db_schema_resource_collection_bool_exp!
   ): resource_db_schema_resource_collection_mutation_response
 
@@ -252,7 +336,9 @@ type mutation_root {
   update single row of the table: "resource_db_schema.resource_collection"
   """
   update_resource_db_schema_resource_collection_by_pk(
-    """sets the columns of the filtered rows to the given values"""
+    """
+    sets the columns of the filtered rows to the given values
+    """
     _set: resource_db_schema_resource_collection_set_input
     pk_columns: resource_db_schema_resource_collection_pk_columns_input!
   ): resource_db_schema_resource_collection
@@ -261,7 +347,9 @@ type mutation_root {
   update multiples rows of table: "resource_db_schema.resource_collection"
   """
   update_resource_db_schema_resource_collection_many(
-    """updates to execute, in order"""
+    """
+    updates to execute, in order
+    """
     updates: [resource_db_schema_resource_collection_updates!]!
   ): [resource_db_schema_resource_collection_mutation_response]
 
@@ -269,7 +357,9 @@ type mutation_root {
   update multiples rows of table: "resource_db_schema.resource"
   """
   update_resource_db_schema_resource_many(
-    """updates to execute, in order"""
+    """
+    updates to execute, in order
+    """
     updates: [resource_db_schema_resource_updates!]!
   ): [resource_db_schema_resource_mutation_response]
 
@@ -277,10 +367,14 @@ type mutation_root {
   update data of the table: "resource_db_schema.user_private"
   """
   update_resource_db_schema_user_private(
-    """sets the columns of the filtered rows to the given values"""
+    """
+    sets the columns of the filtered rows to the given values
+    """
     _set: resource_db_schema_user_private_set_input
 
-    """filter the rows which have to be updated"""
+    """
+    filter the rows which have to be updated
+    """
     where: resource_db_schema_user_private_bool_exp!
   ): resource_db_schema_user_private_mutation_response
 
@@ -288,7 +382,9 @@ type mutation_root {
   update single row of the table: "resource_db_schema.user_private"
   """
   update_resource_db_schema_user_private_by_pk(
-    """sets the columns of the filtered rows to the given values"""
+    """
+    sets the columns of the filtered rows to the given values
+    """
     _set: resource_db_schema_user_private_set_input
     pk_columns: resource_db_schema_user_private_pk_columns_input!
   ): resource_db_schema_user_private
@@ -297,7 +393,9 @@ type mutation_root {
   update multiples rows of table: "resource_db_schema.user_private"
   """
   update_resource_db_schema_user_private_many(
-    """updates to execute, in order"""
+    """
+    updates to execute, in order
+    """
     updates: [resource_db_schema_user_private_updates!]!
   ): [resource_db_schema_user_private_mutation_response]
 
@@ -305,10 +403,14 @@ type mutation_root {
   update data of the table: "resource_db_schema.user_public"
   """
   update_resource_db_schema_user_public(
-    """sets the columns of the filtered rows to the given values"""
+    """
+    sets the columns of the filtered rows to the given values
+    """
     _set: resource_db_schema_user_public_set_input
 
-    """filter the rows which have to be updated"""
+    """
+    filter the rows which have to be updated
+    """
     where: resource_db_schema_user_public_bool_exp!
   ): resource_db_schema_user_public_mutation_response
 
@@ -316,7 +418,9 @@ type mutation_root {
   update single row of the table: "resource_db_schema.user_public"
   """
   update_resource_db_schema_user_public_by_pk(
-    """sets the columns of the filtered rows to the given values"""
+    """
+    sets the columns of the filtered rows to the given values
+    """
     _set: resource_db_schema_user_public_set_input
     pk_columns: resource_db_schema_user_public_pk_columns_input!
   ): resource_db_schema_user_public
@@ -325,29 +429,45 @@ type mutation_root {
   update multiples rows of table: "resource_db_schema.user_public"
   """
   update_resource_db_schema_user_public_many(
-    """updates to execute, in order"""
+    """
+    updates to execute, in order
+    """
     updates: [resource_db_schema_user_public_updates!]!
   ): [resource_db_schema_user_public_mutation_response]
 }
 
-"""column ordering options"""
+"""
+column ordering options
+"""
 enum order_by {
-  """in ascending order, nulls last"""
+  """
+  in ascending order, nulls last
+  """
   asc
 
-  """in ascending order, nulls first"""
+  """
+  in ascending order, nulls first
+  """
   asc_nulls_first
 
-  """in ascending order, nulls last"""
+  """
+  in ascending order, nulls last
+  """
   asc_nulls_last
 
-  """in descending order, nulls first"""
+  """
+  in descending order, nulls first
+  """
   desc
 
-  """in descending order, nulls first"""
+  """
+  in descending order, nulls first
+  """
   desc_nulls_first
 
-  """in descending order, nulls last"""
+  """
+  in descending order, nulls last
+  """
   desc_nulls_last
 }
 
@@ -356,19 +476,29 @@ type query_root {
   fetch data from the table: "resource_db_schema.resource"
   """
   resource_db_schema_resource(
-    """distinct select on columns"""
+    """
+    distinct select on columns
+    """
     distinct_on: [resource_db_schema_resource_select_column!]
 
-    """limit the number of rows returned"""
+    """
+    limit the number of rows returned
+    """
     limit: Int
 
-    """skip the first n rows. Use only with order_by"""
+    """
+    skip the first n rows. Use only with order_by
+    """
     offset: Int
 
-    """sort the rows by one or more columns"""
+    """
+    sort the rows by one or more columns
+    """
     order_by: [resource_db_schema_resource_order_by!]
 
-    """filter the rows returned"""
+    """
+    filter the rows returned
+    """
     where: resource_db_schema_resource_bool_exp
   ): [resource_db_schema_resource!]!
 
@@ -376,19 +506,29 @@ type query_root {
   fetch aggregated fields from the table: "resource_db_schema.resource"
   """
   resource_db_schema_resource_aggregate(
-    """distinct select on columns"""
+    """
+    distinct select on columns
+    """
     distinct_on: [resource_db_schema_resource_select_column!]
 
-    """limit the number of rows returned"""
+    """
+    limit the number of rows returned
+    """
     limit: Int
 
-    """skip the first n rows. Use only with order_by"""
+    """
+    skip the first n rows. Use only with order_by
+    """
     offset: Int
 
-    """sort the rows by one or more columns"""
+    """
+    sort the rows by one or more columns
+    """
     order_by: [resource_db_schema_resource_order_by!]
 
-    """filter the rows returned"""
+    """
+    filter the rows returned
+    """
     where: resource_db_schema_resource_bool_exp
   ): resource_db_schema_resource_aggregate!
 
@@ -401,19 +541,29 @@ type query_root {
   fetch data from the table: "resource_db_schema.resource_collection"
   """
   resource_db_schema_resource_collection(
-    """distinct select on columns"""
+    """
+    distinct select on columns
+    """
     distinct_on: [resource_db_schema_resource_collection_select_column!]
 
-    """limit the number of rows returned"""
+    """
+    limit the number of rows returned
+    """
     limit: Int
 
-    """skip the first n rows. Use only with order_by"""
+    """
+    skip the first n rows. Use only with order_by
+    """
     offset: Int
 
-    """sort the rows by one or more columns"""
+    """
+    sort the rows by one or more columns
+    """
     order_by: [resource_db_schema_resource_collection_order_by!]
 
-    """filter the rows returned"""
+    """
+    filter the rows returned
+    """
     where: resource_db_schema_resource_collection_bool_exp
   ): [resource_db_schema_resource_collection!]!
 
@@ -421,44 +571,66 @@ type query_root {
   fetch aggregated fields from the table: "resource_db_schema.resource_collection"
   """
   resource_db_schema_resource_collection_aggregate(
-    """distinct select on columns"""
+    """
+    distinct select on columns
+    """
     distinct_on: [resource_db_schema_resource_collection_select_column!]
 
-    """limit the number of rows returned"""
+    """
+    limit the number of rows returned
+    """
     limit: Int
 
-    """skip the first n rows. Use only with order_by"""
+    """
+    skip the first n rows. Use only with order_by
+    """
     offset: Int
 
-    """sort the rows by one or more columns"""
+    """
+    sort the rows by one or more columns
+    """
     order_by: [resource_db_schema_resource_collection_order_by!]
 
-    """filter the rows returned"""
+    """
+    filter the rows returned
+    """
     where: resource_db_schema_resource_collection_bool_exp
   ): resource_db_schema_resource_collection_aggregate!
 
   """
   fetch data from the table: "resource_db_schema.resource_collection" using primary key columns
   """
-  resource_db_schema_resource_collection_by_pk(id: uuid!): resource_db_schema_resource_collection
+  resource_db_schema_resource_collection_by_pk(
+    id: uuid!
+  ): resource_db_schema_resource_collection
 
   """
   fetch data from the table: "resource_db_schema.user_private"
   """
   resource_db_schema_user_private(
-    """distinct select on columns"""
+    """
+    distinct select on columns
+    """
     distinct_on: [resource_db_schema_user_private_select_column!]
 
-    """limit the number of rows returned"""
+    """
+    limit the number of rows returned
+    """
     limit: Int
 
-    """skip the first n rows. Use only with order_by"""
+    """
+    skip the first n rows. Use only with order_by
+    """
     offset: Int
 
-    """sort the rows by one or more columns"""
+    """
+    sort the rows by one or more columns
+    """
     order_by: [resource_db_schema_user_private_order_by!]
 
-    """filter the rows returned"""
+    """
+    filter the rows returned
+    """
     where: resource_db_schema_user_private_bool_exp
   ): [resource_db_schema_user_private!]!
 
@@ -466,44 +638,66 @@ type query_root {
   fetch aggregated fields from the table: "resource_db_schema.user_private"
   """
   resource_db_schema_user_private_aggregate(
-    """distinct select on columns"""
+    """
+    distinct select on columns
+    """
     distinct_on: [resource_db_schema_user_private_select_column!]
 
-    """limit the number of rows returned"""
+    """
+    limit the number of rows returned
+    """
     limit: Int
 
-    """skip the first n rows. Use only with order_by"""
+    """
+    skip the first n rows. Use only with order_by
+    """
     offset: Int
 
-    """sort the rows by one or more columns"""
+    """
+    sort the rows by one or more columns
+    """
     order_by: [resource_db_schema_user_private_order_by!]
 
-    """filter the rows returned"""
+    """
+    filter the rows returned
+    """
     where: resource_db_schema_user_private_bool_exp
   ): resource_db_schema_user_private_aggregate!
 
   """
   fetch data from the table: "resource_db_schema.user_private" using primary key columns
   """
-  resource_db_schema_user_private_by_pk(id: uuid!): resource_db_schema_user_private
+  resource_db_schema_user_private_by_pk(
+    id: uuid!
+  ): resource_db_schema_user_private
 
   """
   fetch data from the table: "resource_db_schema.user_public"
   """
   resource_db_schema_user_public(
-    """distinct select on columns"""
+    """
+    distinct select on columns
+    """
     distinct_on: [resource_db_schema_user_public_select_column!]
 
-    """limit the number of rows returned"""
+    """
+    limit the number of rows returned
+    """
     limit: Int
 
-    """skip the first n rows. Use only with order_by"""
+    """
+    skip the first n rows. Use only with order_by
+    """
     offset: Int
 
-    """sort the rows by one or more columns"""
+    """
+    sort the rows by one or more columns
+    """
     order_by: [resource_db_schema_user_public_order_by!]
 
-    """filter the rows returned"""
+    """
+    filter the rows returned
+    """
     where: resource_db_schema_user_public_bool_exp
   ): [resource_db_schema_user_public!]!
 
@@ -511,29 +705,43 @@ type query_root {
   fetch aggregated fields from the table: "resource_db_schema.user_public"
   """
   resource_db_schema_user_public_aggregate(
-    """distinct select on columns"""
+    """
+    distinct select on columns
+    """
     distinct_on: [resource_db_schema_user_public_select_column!]
 
-    """limit the number of rows returned"""
+    """
+    limit the number of rows returned
+    """
     limit: Int
 
-    """skip the first n rows. Use only with order_by"""
+    """
+    skip the first n rows. Use only with order_by
+    """
     offset: Int
 
-    """sort the rows by one or more columns"""
+    """
+    sort the rows by one or more columns
+    """
     order_by: [resource_db_schema_user_public_order_by!]
 
-    """filter the rows returned"""
+    """
+    filter the rows returned
+    """
     where: resource_db_schema_user_public_bool_exp
   ): resource_db_schema_user_public_aggregate!
 
   """
   fetch data from the table: "resource_db_schema.user_public" using primary key columns
   """
-  resource_db_schema_user_public_by_pk(id: uuid!): resource_db_schema_user_public
+  resource_db_schema_user_public_by_pk(
+    id: uuid!
+  ): resource_db_schema_user_public
 }
 
-"""Universal resouce object"""
+"""
+Universal resouce object
+"""
 type resource_db_schema_resource {
   created_at: timestamptz!
   description: String
@@ -542,7 +750,9 @@ type resource_db_schema_resource {
   resource_owner_actual: uuid
   updated_at: timestamptz!
 
-  """An object relationship"""
+  """
+  An object relationship
+  """
   user_private: resource_db_schema_user_private
 }
 
@@ -558,7 +768,10 @@ type resource_db_schema_resource_aggregate {
 aggregate fields of "resource_db_schema.resource"
 """
 type resource_db_schema_resource_aggregate_fields {
-  count(columns: [resource_db_schema_resource_select_column!], distinct: Boolean): Int!
+  count(
+    columns: [resource_db_schema_resource_select_column!]
+    distinct: Boolean
+  ): Int!
   max: resource_db_schema_resource_max_fields
   min: resource_db_schema_resource_min_fields
 }
@@ -579,7 +792,9 @@ input resource_db_schema_resource_bool_exp {
   user_private: resource_db_schema_user_private_bool_exp
 }
 
-"""Collection of resources """
+"""
+Collection of resources
+"""
 type resource_db_schema_resource_collection {
   created_at: timestamptz!
   id: uuid!
@@ -600,7 +815,10 @@ type resource_db_schema_resource_collection_aggregate {
 aggregate fields of "resource_db_schema.resource_collection"
 """
 type resource_db_schema_resource_collection_aggregate_fields {
-  count(columns: [resource_db_schema_resource_collection_select_column!], distinct: Boolean): Int!
+  count(
+    columns: [resource_db_schema_resource_collection_select_column!]
+    distinct: Boolean
+  ): Int!
   max: resource_db_schema_resource_collection_max_fields
   min: resource_db_schema_resource_collection_min_fields
 }
@@ -640,7 +858,9 @@ input resource_db_schema_resource_collection_insert_input {
   updated_at: timestamptz
 }
 
-"""aggregate max on columns"""
+"""
+aggregate max on columns
+"""
 type resource_db_schema_resource_collection_max_fields {
   created_at: timestamptz
   id: uuid
@@ -649,7 +869,9 @@ type resource_db_schema_resource_collection_max_fields {
   updated_at: timestamptz
 }
 
-"""aggregate min on columns"""
+"""
+aggregate min on columns
+"""
 type resource_db_schema_resource_collection_min_fields {
   created_at: timestamptz
   id: uuid
@@ -662,10 +884,14 @@ type resource_db_schema_resource_collection_min_fields {
 response of any mutation on the table "resource_db_schema.resource_collection"
 """
 type resource_db_schema_resource_collection_mutation_response {
-  """number of rows affected by the mutation"""
+  """
+  number of rows affected by the mutation
+  """
   affected_rows: Int!
 
-  """data from the rows affected by the mutation"""
+  """
+  data from the rows affected by the mutation
+  """
   returning: [resource_db_schema_resource_collection!]!
 }
 
@@ -700,19 +926,29 @@ input resource_db_schema_resource_collection_pk_columns_input {
 select columns of table "resource_db_schema.resource_collection"
 """
 enum resource_db_schema_resource_collection_select_column {
-  """column name"""
+  """
+  column name
+  """
   created_at
 
-  """column name"""
+  """
+  column name
+  """
   id
 
-  """column name"""
+  """
+  column name
+  """
   name
 
-  """column name"""
+  """
+  column name
+  """
   resource_id_collection
 
-  """column name"""
+  """
+  column name
+  """
   updated_at
 }
 
@@ -731,14 +967,20 @@ input resource_db_schema_resource_collection_set_input {
 Streaming cursor of the table "resource_db_schema_resource_collection"
 """
 input resource_db_schema_resource_collection_stream_cursor_input {
-  """Stream column input with initial value"""
+  """
+  Stream column input with initial value
+  """
   initial_value: resource_db_schema_resource_collection_stream_cursor_value_input!
 
-  """cursor ordering"""
+  """
+  cursor ordering
+  """
   ordering: cursor_ordering
 }
 
-"""Initial value of the column from where the streaming should start"""
+"""
+Initial value of the column from where the streaming should start
+"""
 input resource_db_schema_resource_collection_stream_cursor_value_input {
   created_at: timestamptz
   id: uuid
@@ -751,27 +993,41 @@ input resource_db_schema_resource_collection_stream_cursor_value_input {
 update columns of table "resource_db_schema.resource_collection"
 """
 enum resource_db_schema_resource_collection_update_column {
-  """column name"""
+  """
+  column name
+  """
   created_at
 
-  """column name"""
+  """
+  column name
+  """
   id
 
-  """column name"""
+  """
+  column name
+  """
   name
 
-  """column name"""
+  """
+  column name
+  """
   resource_id_collection
 
-  """column name"""
+  """
+  column name
+  """
   updated_at
 }
 
 input resource_db_schema_resource_collection_updates {
-  """sets the columns of the filtered rows to the given values"""
+  """
+  sets the columns of the filtered rows to the given values
+  """
   _set: resource_db_schema_resource_collection_set_input
 
-  """filter the rows which have to be updated"""
+  """
+  filter the rows which have to be updated
+  """
   where: resource_db_schema_resource_collection_bool_exp!
 }
 
@@ -803,7 +1059,9 @@ input resource_db_schema_resource_insert_input {
   user_private: resource_db_schema_user_private_obj_rel_insert_input
 }
 
-"""aggregate max on columns"""
+"""
+aggregate max on columns
+"""
 type resource_db_schema_resource_max_fields {
   created_at: timestamptz
   description: String
@@ -813,7 +1071,9 @@ type resource_db_schema_resource_max_fields {
   updated_at: timestamptz
 }
 
-"""aggregate min on columns"""
+"""
+aggregate min on columns
+"""
 type resource_db_schema_resource_min_fields {
   created_at: timestamptz
   description: String
@@ -827,10 +1087,14 @@ type resource_db_schema_resource_min_fields {
 response of any mutation on the table "resource_db_schema.resource"
 """
 type resource_db_schema_resource_mutation_response {
-  """number of rows affected by the mutation"""
+  """
+  number of rows affected by the mutation
+  """
   affected_rows: Int!
 
-  """data from the rows affected by the mutation"""
+  """
+  data from the rows affected by the mutation
+  """
   returning: [resource_db_schema_resource!]!
 }
 
@@ -840,7 +1104,9 @@ input type for inserting object relation for remote table "resource_db_schema.re
 input resource_db_schema_resource_obj_rel_insert_input {
   data: resource_db_schema_resource_insert_input!
 
-  """upsert condition"""
+  """
+  upsert condition
+  """
   on_conflict: resource_db_schema_resource_on_conflict
 }
 
@@ -866,7 +1132,9 @@ input resource_db_schema_resource_order_by {
   user_private: resource_db_schema_user_private_order_by
 }
 
-"""primary key columns input for table: resource_db_schema.resource"""
+"""
+primary key columns input for table: resource_db_schema.resource
+"""
 input resource_db_schema_resource_pk_columns_input {
   id: uuid!
 }
@@ -875,22 +1143,34 @@ input resource_db_schema_resource_pk_columns_input {
 select columns of table "resource_db_schema.resource"
 """
 enum resource_db_schema_resource_select_column {
-  """column name"""
+  """
+  column name
+  """
   created_at
 
-  """column name"""
+  """
+  column name
+  """
   description
 
-  """column name"""
+  """
+  column name
+  """
   id
 
-  """column name"""
+  """
+  column name
+  """
   name
 
-  """column name"""
+  """
+  column name
+  """
   resource_owner_actual
 
-  """column name"""
+  """
+  column name
+  """
   updated_at
 }
 
@@ -910,14 +1190,20 @@ input resource_db_schema_resource_set_input {
 Streaming cursor of the table "resource_db_schema_resource"
 """
 input resource_db_schema_resource_stream_cursor_input {
-  """Stream column input with initial value"""
+  """
+  Stream column input with initial value
+  """
   initial_value: resource_db_schema_resource_stream_cursor_value_input!
 
-  """cursor ordering"""
+  """
+  cursor ordering
+  """
   ordering: cursor_ordering
 }
 
-"""Initial value of the column from where the streaming should start"""
+"""
+Initial value of the column from where the streaming should start
+"""
 input resource_db_schema_resource_stream_cursor_value_input {
   created_at: timestamptz
   description: String
@@ -931,34 +1217,52 @@ input resource_db_schema_resource_stream_cursor_value_input {
 update columns of table "resource_db_schema.resource"
 """
 enum resource_db_schema_resource_update_column {
-  """column name"""
+  """
+  column name
+  """
   created_at
 
-  """column name"""
+  """
+  column name
+  """
   description
 
-  """column name"""
+  """
+  column name
+  """
   id
 
-  """column name"""
+  """
+  column name
+  """
   name
 
-  """column name"""
+  """
+  column name
+  """
   resource_owner_actual
 
-  """column name"""
+  """
+  column name
+  """
   updated_at
 }
 
 input resource_db_schema_resource_updates {
-  """sets the columns of the filtered rows to the given values"""
+  """
+  sets the columns of the filtered rows to the given values
+  """
   _set: resource_db_schema_resource_set_input
 
-  """filter the rows which have to be updated"""
+  """
+  filter the rows which have to be updated
+  """
   where: resource_db_schema_resource_bool_exp!
 }
 
-"""Private user data"""
+"""
+Private user data
+"""
 type resource_db_schema_user_private {
   avatar_name: String!
   created_at: timestamptz!
@@ -970,11 +1274,15 @@ type resource_db_schema_user_private {
   name_full: String
   name_last: String
 
-  """An object relationship"""
+  """
+  An object relationship
+  """
   resource: resource_db_schema_resource
   updated_at: timestamptz!
 
-  """An object relationship"""
+  """
+  An object relationship
+  """
   user_public: resource_db_schema_user_public
 }
 
@@ -990,7 +1298,10 @@ type resource_db_schema_user_private_aggregate {
 aggregate fields of "resource_db_schema.user_private"
 """
 type resource_db_schema_user_private_aggregate_fields {
-  count(columns: [resource_db_schema_user_private_select_column!], distinct: Boolean): Int!
+  count(
+    columns: [resource_db_schema_user_private_select_column!]
+    distinct: Boolean
+  ): Int!
   max: resource_db_schema_user_private_max_fields
   min: resource_db_schema_user_private_min_fields
 }
@@ -1059,7 +1370,9 @@ input resource_db_schema_user_private_insert_input {
   user_public: resource_db_schema_user_public_obj_rel_insert_input
 }
 
-"""aggregate max on columns"""
+"""
+aggregate max on columns
+"""
 type resource_db_schema_user_private_max_fields {
   avatar_name: String
   created_at: timestamptz
@@ -1073,7 +1386,9 @@ type resource_db_schema_user_private_max_fields {
   updated_at: timestamptz
 }
 
-"""aggregate min on columns"""
+"""
+aggregate min on columns
+"""
 type resource_db_schema_user_private_min_fields {
   avatar_name: String
   created_at: timestamptz
@@ -1091,10 +1406,14 @@ type resource_db_schema_user_private_min_fields {
 response of any mutation on the table "resource_db_schema.user_private"
 """
 type resource_db_schema_user_private_mutation_response {
-  """number of rows affected by the mutation"""
+  """
+  number of rows affected by the mutation
+  """
   affected_rows: Int!
 
-  """data from the rows affected by the mutation"""
+  """
+  data from the rows affected by the mutation
+  """
   returning: [resource_db_schema_user_private!]!
 }
 
@@ -1104,7 +1423,9 @@ input type for inserting object relation for remote table "resource_db_schema.us
 input resource_db_schema_user_private_obj_rel_insert_input {
   data: resource_db_schema_user_private_insert_input!
 
-  """upsert condition"""
+  """
+  upsert condition
+  """
   on_conflict: resource_db_schema_user_private_on_conflict
 }
 
@@ -1135,7 +1456,9 @@ input resource_db_schema_user_private_order_by {
   user_public: resource_db_schema_user_public_order_by
 }
 
-"""primary key columns input for table: resource_db_schema.user_private"""
+"""
+primary key columns input for table: resource_db_schema.user_private
+"""
 input resource_db_schema_user_private_pk_columns_input {
   id: uuid!
 }
@@ -1144,34 +1467,54 @@ input resource_db_schema_user_private_pk_columns_input {
 select columns of table "resource_db_schema.user_private"
 """
 enum resource_db_schema_user_private_select_column {
-  """column name"""
+  """
+  column name
+  """
   avatar_name
 
-  """column name"""
+  """
+  column name
+  """
   created_at
 
-  """column name"""
+  """
+  column name
+  """
   email_address
 
-  """column name"""
+  """
+  column name
+  """
   id
 
-  """column name"""
+  """
+  column name
+  """
   id_public
 
-  """column name"""
+  """
+  column name
+  """
   id_resource_collection
 
-  """column name"""
+  """
+  column name
+  """
   name_first
 
-  """column name"""
+  """
+  column name
+  """
   name_full
 
-  """column name"""
+  """
+  column name
+  """
   name_last
 
-  """column name"""
+  """
+  column name
+  """
   updated_at
 }
 
@@ -1195,14 +1538,20 @@ input resource_db_schema_user_private_set_input {
 Streaming cursor of the table "resource_db_schema_user_private"
 """
 input resource_db_schema_user_private_stream_cursor_input {
-  """Stream column input with initial value"""
+  """
+  Stream column input with initial value
+  """
   initial_value: resource_db_schema_user_private_stream_cursor_value_input!
 
-  """cursor ordering"""
+  """
+  cursor ordering
+  """
   ordering: cursor_ordering
 }
 
-"""Initial value of the column from where the streaming should start"""
+"""
+Initial value of the column from where the streaming should start
+"""
 input resource_db_schema_user_private_stream_cursor_value_input {
   avatar_name: String
   created_at: timestamptz
@@ -1220,53 +1569,81 @@ input resource_db_schema_user_private_stream_cursor_value_input {
 update columns of table "resource_db_schema.user_private"
 """
 enum resource_db_schema_user_private_update_column {
-  """column name"""
+  """
+  column name
+  """
   avatar_name
 
-  """column name"""
+  """
+  column name
+  """
   created_at
 
-  """column name"""
+  """
+  column name
+  """
   email_address
 
-  """column name"""
+  """
+  column name
+  """
   id
 
-  """column name"""
+  """
+  column name
+  """
   id_public
 
-  """column name"""
+  """
+  column name
+  """
   id_resource_collection
 
-  """column name"""
+  """
+  column name
+  """
   name_first
 
-  """column name"""
+  """
+  column name
+  """
   name_full
 
-  """column name"""
+  """
+  column name
+  """
   name_last
 
-  """column name"""
+  """
+  column name
+  """
   updated_at
 }
 
 input resource_db_schema_user_private_updates {
-  """sets the columns of the filtered rows to the given values"""
+  """
+  sets the columns of the filtered rows to the given values
+  """
   _set: resource_db_schema_user_private_set_input
 
-  """filter the rows which have to be updated"""
+  """
+  filter the rows which have to be updated
+  """
   where: resource_db_schema_user_private_bool_exp!
 }
 
-"""Public user data"""
+"""
+Public user data
+"""
 type resource_db_schema_user_public {
   created_at: timestamptz
   id: uuid!
   id_private: uuid!
   updated_at: timestamptz
 
-  """An object relationship"""
+  """
+  An object relationship
+  """
   user_private: resource_db_schema_user_private!
 }
 
@@ -1282,7 +1659,10 @@ type resource_db_schema_user_public_aggregate {
 aggregate fields of "resource_db_schema.user_public"
 """
 type resource_db_schema_user_public_aggregate_fields {
-  count(columns: [resource_db_schema_user_public_select_column!], distinct: Boolean): Int!
+  count(
+    columns: [resource_db_schema_user_public_select_column!]
+    distinct: Boolean
+  ): Int!
   max: resource_db_schema_user_public_max_fields
   min: resource_db_schema_user_public_min_fields
 }
@@ -1327,7 +1707,9 @@ input resource_db_schema_user_public_insert_input {
   user_private: resource_db_schema_user_private_obj_rel_insert_input
 }
 
-"""aggregate max on columns"""
+"""
+aggregate max on columns
+"""
 type resource_db_schema_user_public_max_fields {
   created_at: timestamptz
   id: uuid
@@ -1335,7 +1717,9 @@ type resource_db_schema_user_public_max_fields {
   updated_at: timestamptz
 }
 
-"""aggregate min on columns"""
+"""
+aggregate min on columns
+"""
 type resource_db_schema_user_public_min_fields {
   created_at: timestamptz
   id: uuid
@@ -1347,10 +1731,14 @@ type resource_db_schema_user_public_min_fields {
 response of any mutation on the table "resource_db_schema.user_public"
 """
 type resource_db_schema_user_public_mutation_response {
-  """number of rows affected by the mutation"""
+  """
+  number of rows affected by the mutation
+  """
   affected_rows: Int!
 
-  """data from the rows affected by the mutation"""
+  """
+  data from the rows affected by the mutation
+  """
   returning: [resource_db_schema_user_public!]!
 }
 
@@ -1360,7 +1748,9 @@ input type for inserting object relation for remote table "resource_db_schema.us
 input resource_db_schema_user_public_obj_rel_insert_input {
   data: resource_db_schema_user_public_insert_input!
 
-  """upsert condition"""
+  """
+  upsert condition
+  """
   on_conflict: resource_db_schema_user_public_on_conflict
 }
 
@@ -1384,7 +1774,9 @@ input resource_db_schema_user_public_order_by {
   user_private: resource_db_schema_user_private_order_by
 }
 
-"""primary key columns input for table: resource_db_schema.user_public"""
+"""
+primary key columns input for table: resource_db_schema.user_public
+"""
 input resource_db_schema_user_public_pk_columns_input {
   id: uuid!
 }
@@ -1393,16 +1785,24 @@ input resource_db_schema_user_public_pk_columns_input {
 select columns of table "resource_db_schema.user_public"
 """
 enum resource_db_schema_user_public_select_column {
-  """column name"""
+  """
+  column name
+  """
   created_at
 
-  """column name"""
+  """
+  column name
+  """
   id
 
-  """column name"""
+  """
+  column name
+  """
   id_private
 
-  """column name"""
+  """
+  column name
+  """
   updated_at
 }
 
@@ -1420,14 +1820,20 @@ input resource_db_schema_user_public_set_input {
 Streaming cursor of the table "resource_db_schema_user_public"
 """
 input resource_db_schema_user_public_stream_cursor_input {
-  """Stream column input with initial value"""
+  """
+  Stream column input with initial value
+  """
   initial_value: resource_db_schema_user_public_stream_cursor_value_input!
 
-  """cursor ordering"""
+  """
+  cursor ordering
+  """
   ordering: cursor_ordering
 }
 
-"""Initial value of the column from where the streaming should start"""
+"""
+Initial value of the column from where the streaming should start
+"""
 input resource_db_schema_user_public_stream_cursor_value_input {
   created_at: timestamptz
   id: uuid
@@ -1439,24 +1845,36 @@ input resource_db_schema_user_public_stream_cursor_value_input {
 update columns of table "resource_db_schema.user_public"
 """
 enum resource_db_schema_user_public_update_column {
-  """column name"""
+  """
+  column name
+  """
   created_at
 
-  """column name"""
+  """
+  column name
+  """
   id
 
-  """column name"""
+  """
+  column name
+  """
   id_private
 
-  """column name"""
+  """
+  column name
+  """
   updated_at
 }
 
 input resource_db_schema_user_public_updates {
-  """sets the columns of the filtered rows to the given values"""
+  """
+  sets the columns of the filtered rows to the given values
+  """
   _set: resource_db_schema_user_public_set_input
 
-  """filter the rows which have to be updated"""
+  """
+  filter the rows which have to be updated
+  """
   where: resource_db_schema_user_public_bool_exp!
 }
 
@@ -1465,19 +1883,29 @@ type subscription_root {
   fetch data from the table: "resource_db_schema.resource"
   """
   resource_db_schema_resource(
-    """distinct select on columns"""
+    """
+    distinct select on columns
+    """
     distinct_on: [resource_db_schema_resource_select_column!]
 
-    """limit the number of rows returned"""
+    """
+    limit the number of rows returned
+    """
     limit: Int
 
-    """skip the first n rows. Use only with order_by"""
+    """
+    skip the first n rows. Use only with order_by
+    """
     offset: Int
 
-    """sort the rows by one or more columns"""
+    """
+    sort the rows by one or more columns
+    """
     order_by: [resource_db_schema_resource_order_by!]
 
-    """filter the rows returned"""
+    """
+    filter the rows returned
+    """
     where: resource_db_schema_resource_bool_exp
   ): [resource_db_schema_resource!]!
 
@@ -1485,19 +1913,29 @@ type subscription_root {
   fetch aggregated fields from the table: "resource_db_schema.resource"
   """
   resource_db_schema_resource_aggregate(
-    """distinct select on columns"""
+    """
+    distinct select on columns
+    """
     distinct_on: [resource_db_schema_resource_select_column!]
 
-    """limit the number of rows returned"""
+    """
+    limit the number of rows returned
+    """
     limit: Int
 
-    """skip the first n rows. Use only with order_by"""
+    """
+    skip the first n rows. Use only with order_by
+    """
     offset: Int
 
-    """sort the rows by one or more columns"""
+    """
+    sort the rows by one or more columns
+    """
     order_by: [resource_db_schema_resource_order_by!]
 
-    """filter the rows returned"""
+    """
+    filter the rows returned
+    """
     where: resource_db_schema_resource_bool_exp
   ): resource_db_schema_resource_aggregate!
 
@@ -1510,19 +1948,29 @@ type subscription_root {
   fetch data from the table: "resource_db_schema.resource_collection"
   """
   resource_db_schema_resource_collection(
-    """distinct select on columns"""
+    """
+    distinct select on columns
+    """
     distinct_on: [resource_db_schema_resource_collection_select_column!]
 
-    """limit the number of rows returned"""
+    """
+    limit the number of rows returned
+    """
     limit: Int
 
-    """skip the first n rows. Use only with order_by"""
+    """
+    skip the first n rows. Use only with order_by
+    """
     offset: Int
 
-    """sort the rows by one or more columns"""
+    """
+    sort the rows by one or more columns
+    """
     order_by: [resource_db_schema_resource_collection_order_by!]
 
-    """filter the rows returned"""
+    """
+    filter the rows returned
+    """
     where: resource_db_schema_resource_collection_bool_exp
   ): [resource_db_schema_resource_collection!]!
 
@@ -1530,38 +1978,56 @@ type subscription_root {
   fetch aggregated fields from the table: "resource_db_schema.resource_collection"
   """
   resource_db_schema_resource_collection_aggregate(
-    """distinct select on columns"""
+    """
+    distinct select on columns
+    """
     distinct_on: [resource_db_schema_resource_collection_select_column!]
 
-    """limit the number of rows returned"""
+    """
+    limit the number of rows returned
+    """
     limit: Int
 
-    """skip the first n rows. Use only with order_by"""
+    """
+    skip the first n rows. Use only with order_by
+    """
     offset: Int
 
-    """sort the rows by one or more columns"""
+    """
+    sort the rows by one or more columns
+    """
     order_by: [resource_db_schema_resource_collection_order_by!]
 
-    """filter the rows returned"""
+    """
+    filter the rows returned
+    """
     where: resource_db_schema_resource_collection_bool_exp
   ): resource_db_schema_resource_collection_aggregate!
 
   """
   fetch data from the table: "resource_db_schema.resource_collection" using primary key columns
   """
-  resource_db_schema_resource_collection_by_pk(id: uuid!): resource_db_schema_resource_collection
+  resource_db_schema_resource_collection_by_pk(
+    id: uuid!
+  ): resource_db_schema_resource_collection
 
   """
   fetch data from the table in a streaming manner: "resource_db_schema.resource_collection"
   """
   resource_db_schema_resource_collection_stream(
-    """maximum number of rows returned in a single batch"""
+    """
+    maximum number of rows returned in a single batch
+    """
     batch_size: Int!
 
-    """cursor to stream the results returned by the query"""
+    """
+    cursor to stream the results returned by the query
+    """
     cursor: [resource_db_schema_resource_collection_stream_cursor_input]!
 
-    """filter the rows returned"""
+    """
+    filter the rows returned
+    """
     where: resource_db_schema_resource_collection_bool_exp
   ): [resource_db_schema_resource_collection!]!
 
@@ -1569,13 +2035,19 @@ type subscription_root {
   fetch data from the table in a streaming manner: "resource_db_schema.resource"
   """
   resource_db_schema_resource_stream(
-    """maximum number of rows returned in a single batch"""
+    """
+    maximum number of rows returned in a single batch
+    """
     batch_size: Int!
 
-    """cursor to stream the results returned by the query"""
+    """
+    cursor to stream the results returned by the query
+    """
     cursor: [resource_db_schema_resource_stream_cursor_input]!
 
-    """filter the rows returned"""
+    """
+    filter the rows returned
+    """
     where: resource_db_schema_resource_bool_exp
   ): [resource_db_schema_resource!]!
 
@@ -1583,19 +2055,29 @@ type subscription_root {
   fetch data from the table: "resource_db_schema.user_private"
   """
   resource_db_schema_user_private(
-    """distinct select on columns"""
+    """
+    distinct select on columns
+    """
     distinct_on: [resource_db_schema_user_private_select_column!]
 
-    """limit the number of rows returned"""
+    """
+    limit the number of rows returned
+    """
     limit: Int
 
-    """skip the first n rows. Use only with order_by"""
+    """
+    skip the first n rows. Use only with order_by
+    """
     offset: Int
 
-    """sort the rows by one or more columns"""
+    """
+    sort the rows by one or more columns
+    """
     order_by: [resource_db_schema_user_private_order_by!]
 
-    """filter the rows returned"""
+    """
+    filter the rows returned
+    """
     where: resource_db_schema_user_private_bool_exp
   ): [resource_db_schema_user_private!]!
 
@@ -1603,38 +2085,56 @@ type subscription_root {
   fetch aggregated fields from the table: "resource_db_schema.user_private"
   """
   resource_db_schema_user_private_aggregate(
-    """distinct select on columns"""
+    """
+    distinct select on columns
+    """
     distinct_on: [resource_db_schema_user_private_select_column!]
 
-    """limit the number of rows returned"""
+    """
+    limit the number of rows returned
+    """
     limit: Int
 
-    """skip the first n rows. Use only with order_by"""
+    """
+    skip the first n rows. Use only with order_by
+    """
     offset: Int
 
-    """sort the rows by one or more columns"""
+    """
+    sort the rows by one or more columns
+    """
     order_by: [resource_db_schema_user_private_order_by!]
 
-    """filter the rows returned"""
+    """
+    filter the rows returned
+    """
     where: resource_db_schema_user_private_bool_exp
   ): resource_db_schema_user_private_aggregate!
 
   """
   fetch data from the table: "resource_db_schema.user_private" using primary key columns
   """
-  resource_db_schema_user_private_by_pk(id: uuid!): resource_db_schema_user_private
+  resource_db_schema_user_private_by_pk(
+    id: uuid!
+  ): resource_db_schema_user_private
 
   """
   fetch data from the table in a streaming manner: "resource_db_schema.user_private"
   """
   resource_db_schema_user_private_stream(
-    """maximum number of rows returned in a single batch"""
+    """
+    maximum number of rows returned in a single batch
+    """
     batch_size: Int!
 
-    """cursor to stream the results returned by the query"""
+    """
+    cursor to stream the results returned by the query
+    """
     cursor: [resource_db_schema_user_private_stream_cursor_input]!
 
-    """filter the rows returned"""
+    """
+    filter the rows returned
+    """
     where: resource_db_schema_user_private_bool_exp
   ): [resource_db_schema_user_private!]!
 
@@ -1642,19 +2142,29 @@ type subscription_root {
   fetch data from the table: "resource_db_schema.user_public"
   """
   resource_db_schema_user_public(
-    """distinct select on columns"""
+    """
+    distinct select on columns
+    """
     distinct_on: [resource_db_schema_user_public_select_column!]
 
-    """limit the number of rows returned"""
+    """
+    limit the number of rows returned
+    """
     limit: Int
 
-    """skip the first n rows. Use only with order_by"""
+    """
+    skip the first n rows. Use only with order_by
+    """
     offset: Int
 
-    """sort the rows by one or more columns"""
+    """
+    sort the rows by one or more columns
+    """
     order_by: [resource_db_schema_user_public_order_by!]
 
-    """filter the rows returned"""
+    """
+    filter the rows returned
+    """
     where: resource_db_schema_user_public_bool_exp
   ): [resource_db_schema_user_public!]!
 
@@ -1662,38 +2172,56 @@ type subscription_root {
   fetch aggregated fields from the table: "resource_db_schema.user_public"
   """
   resource_db_schema_user_public_aggregate(
-    """distinct select on columns"""
+    """
+    distinct select on columns
+    """
     distinct_on: [resource_db_schema_user_public_select_column!]
 
-    """limit the number of rows returned"""
+    """
+    limit the number of rows returned
+    """
     limit: Int
 
-    """skip the first n rows. Use only with order_by"""
+    """
+    skip the first n rows. Use only with order_by
+    """
     offset: Int
 
-    """sort the rows by one or more columns"""
+    """
+    sort the rows by one or more columns
+    """
     order_by: [resource_db_schema_user_public_order_by!]
 
-    """filter the rows returned"""
+    """
+    filter the rows returned
+    """
     where: resource_db_schema_user_public_bool_exp
   ): resource_db_schema_user_public_aggregate!
 
   """
   fetch data from the table: "resource_db_schema.user_public" using primary key columns
   """
-  resource_db_schema_user_public_by_pk(id: uuid!): resource_db_schema_user_public
+  resource_db_schema_user_public_by_pk(
+    id: uuid!
+  ): resource_db_schema_user_public
 
   """
   fetch data from the table in a streaming manner: "resource_db_schema.user_public"
   """
   resource_db_schema_user_public_stream(
-    """maximum number of rows returned in a single batch"""
+    """
+    maximum number of rows returned in a single batch
+    """
     batch_size: Int!
 
-    """cursor to stream the results returned by the query"""
+    """
+    cursor to stream the results returned by the query
+    """
     cursor: [resource_db_schema_user_public_stream_cursor_input]!
 
-    """filter the rows returned"""
+    """
+    filter the rows returned
+    """
     where: resource_db_schema_user_public_bool_exp
   ): [resource_db_schema_user_public!]!
 }
@@ -1721,10 +2249,14 @@ scalar uuid
 Boolean expression to compare columns of type "uuid". All fields are combined with logical 'AND'.
 """
 input uuid_array_comparison_exp {
-  """is the array contained in the given array value"""
+  """
+  is the array contained in the given array value
+  """
   _contained_in: [uuid!]
 
-  """does the array contain the given value"""
+  """
+  does the array contain the given value
+  """
   _contains: [uuid!]
   _eq: [uuid!]
   _gt: [uuid!]
@@ -1751,4 +2283,3 @@ input uuid_comparison_exp {
   _neq: uuid
   _nin: [uuid!]
 }
-
