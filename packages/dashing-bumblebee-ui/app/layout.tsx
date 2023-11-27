@@ -34,7 +34,7 @@ export default function RootLayout({
             {/*  }}*/}
             {/*>*/}
             <Box
-              sx={{ margin: "1em 0 0 2em", position: "absolute", zIndex: 5 }}
+              sx={{ margin: "0 0 0 1em", position: "absolute", zIndex: 5 }}
             >
               <Image
                 src={
@@ -42,8 +42,8 @@ export default function RootLayout({
                     .assetUrls["logoSvg"]
                 }
                 alt={"logo"}
-                width={150}
-                height={75}
+                width={300}
+                height={100}
               />
             </Box>
             {/*   </AppBar>*/}

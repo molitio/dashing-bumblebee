@@ -12,6 +12,8 @@ import AlternateEmailIcon from "@mui/icons-material/AlternateEmail";
 import { ApplicationContextRoot } from "../context";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { useTheme } from "@mui/material/styles";
+import Link from "next/link";
+import style from "./style/page.module.css";
 
 export default function Home() {
   const theme = useTheme();
@@ -50,8 +52,9 @@ export default function Home() {
       >
         <Typography
           variant="h1"
+          color={ApplicationTheme.palette.text.main}
           sx={{
-            fontSize: "2.4rem",
+            fontSize: "2rem",
             fontWeight: 600,
             overflowWrap: "break-word",
           }}
@@ -76,6 +79,10 @@ export default function Home() {
           direction="column"
           sx={{ padding: 2, justifyContent: "left" }}
         >
+          <Link className={style.link} href={ApplicationContextRoot.contentRoot["home"].leafs["cover"].assetUrls["phoneNumberHref"]} style={{
+              
+            
+            }}>
           <Stack direction="row" alignItems="center">
             <Button color="primary" variant="contained">
               <PhoneIcon />
@@ -84,36 +91,47 @@ export default function Home() {
               variant="button"
               sx={{ overflowWrap: "break-word", padding: "0.5em" }}
             >
-              {`+36 00 000 0000`}{" "}
+               {
+                 ApplicationContextRoot.contentRoot["home"].leafs["cover"]
+              .textContent["phoneNumber"]
+          }
             </Typography>
           </Stack>
+            </Link>
+            <Link className={style.link}  href={ApplicationContextRoot.contentRoot["home"].leafs["cover"].assetUrls["infoEmailHref"]}>
           <Stack direction="row" alignItems="center">
+           
+              
             <Button
               color="primary"
               variant="contained"
               sx={{
                 backgroundColor:
-                  ApplicationTheme?.palette?.interactiveSecondary?.main,
+                ApplicationTheme?.palette?.interactiveSecondary?.main,
               }}
-            >
+              >
               {
                 <AlternateEmailIcon />
-                /*               ApplicationContextRoot.contentRoot["home"].leafs["cover"]\
-              .textContent["ctaEmail"] */
+                
               }
             </Button>{" "}
             <Typography
               variant="button"
+              fontSize={"0.8em"}
               sx={{ overflowWrap: "break-word", padding: "0.5em" }}
-            >
-              {`+36 00 000 0000`}{" "}
+              >
+                  {
+                    ApplicationContextRoot.contentRoot["home"].leafs["cover"]
+                    .textContent["infoEmail"]
+                  }
             </Typography>
           </Stack>
+          </Link>
         </Stack>
-        <Typography variant="subtitle2">
+        <Typography variant="subtitle2" sx={{textAlign: "left", padding: "0 0 0 2em"}}>
           {
             ApplicationContextRoot.contentRoot["home"].leafs["cover"]
-              .textContent["subTitle2"]
+            .textContent["subTitle2"]
           }
         </Typography>
       </Container>

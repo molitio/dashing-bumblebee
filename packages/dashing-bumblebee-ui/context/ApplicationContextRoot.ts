@@ -35,8 +35,12 @@ export const ApplicationContextRoot = {
             subTitle2: "Egy kattintás a megoldásra.",
             ctaPhone: "Telefon",
             ctaEmail: "Email",
+            phoneNumber: "+36 20 413 1238",
+            infoEmail: "infoconnect@roadistics.com",
           },
           assetUrls: {
+            infoEmailHref: "mailto:infoconnect@roadistics.com",
+            phoneNumberHref: "tel:+36204131238",
             backgroundImage: "/background_combined.png",
           },
         },
