@@ -11,7 +11,7 @@ export const ApplicationContextRoot = {
       leafs: {
         app: {
           textContent: {
-            appTitle: "First Inter Freight",
+            appTitle: "Roadistics",
             appDescription: "Mozdítsa meg a világot velünk!",
           },
           assetUrls: {
